@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.13 21.84">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #816bc6;
+        stroke: #816bc6;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #e2be50;
+        stroke: #e2be50;
+        stroke-width: .5px;
+      }
+
+      .cls-3 {
+        fill: #ba3a23;
+      }
+
+      .cls-3, .cls-5 {
+        stroke: #ba3a23;
+        stroke-width: .25px;
+      }
+
+      .cls-4 {
+        fill: #592f8e;
+        stroke: #592f8e;
+      }
+
+      .cls-5 {
+        fill: #e04c34;
+      }
+
+      .cls-6 {
+        fill: #f8e8ab;
+        stroke: #f8e8ab;
+      }
+    </style>
+  </defs>
+  <g id="Capa_2" data-name="Capa 2">
+    <path class="cls-4" d="M8.04,9.47s3.68-1.99,8.23,0-10.74,2.32-8.23,0Z"/>
+    <polygon class="cls-4" points="1.56 4.48 12.12 .53 22.67 4.48 13.01 7.94 1.56 4.48"/>
+  </g>
+  <g id="Capa_3" data-name="Capa 3">
+    <path class="cls-1" d="M17.07,9.08l.18-4.09c-5.32-2.44-9.49,0-9.49,0v4.09s3.75-3.23,9.31,0Z"/>
+  </g>
+  <g id="Capa_4" data-name="Capa 4">
+    <path class="cls-6" d="M2.51,19.02c11.48-1.24,19.61,0,19.61,0,1.48-3.72,0-7.11,0-7.11-9.35,1.7-19.61,0-19.61,0"/>
+  </g>
+  <g id="Capa_5" data-name="Capa 5">
+    <path class="cls-2" d="M2.51,19.05c-.55,1.24-1.09-5.29,0-7.11,1.01-1.68,.98,6.89-.13,7.25"/>
+  </g>
+  <g id="Capa_6" data-name="Capa 6">
+    <path class="cls-3" d="M10.11,20.95s.91,.03,1.17-.46c0,0,.52,.38,.55,1.02,.05,.92,1.35-2.46,1.35-2.46l1.39,2.46,.29-1.15,1.24,.29c-1.47-2.71-1.99-8.38-1.99-8.38h-3.1s.55,7.47-.91,8.67Z"/>
+  </g>
+  <g id="Capa_7" data-name="Capa 7">
+    <circle class="cls-5" cx="12.91" cy="15.4" r="2.25"/>
+  </g>
+</svg>

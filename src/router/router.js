@@ -19,17 +19,20 @@ const routes = [
   {
     path: '/programacion',
     name: 'Program',
-    component: () => import('@/components/ProgramComponent.vue'),
+    component: () => import('@/components/programacion/ProgramComponent.vue'),
   },
   {
     path: '/ias',
     name: 'IAS',
-    component: () => import('@/components/IasComponent.vue'),
+    component: () => import('@/components/ias/IasComponent.vue'),
   },
 ];
 
 const router = createRouter({
   history: createWebHistory(),
+  scrollBehavior() {
+    return { top: 0 };
+  },
   routes,
 });
 

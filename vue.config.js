@@ -5,6 +5,14 @@ module.exports = defineConfig({
   transpileDependencies: true,
   publicPath: '/',
   configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /\.glsl$/,
+          use: "raw-loader",
+        },
+      ],
+    },
     plugins: [
       new BundleAnalyzerPlugin(),
     ],
