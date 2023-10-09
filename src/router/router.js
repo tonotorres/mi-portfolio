@@ -26,6 +26,11 @@ const routes = [
     name: 'IAS',
     component: () => import('@/components/ias/IasComponent.vue'),
   },
+  {
+    path: '/fictionexpress',
+    name: 'Fiction Express',
+    component: () => import('@/components/FictionExpress.vue'),
+  },
 ];
 
 const router = createRouter({
