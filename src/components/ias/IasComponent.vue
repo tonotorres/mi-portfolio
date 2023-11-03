@@ -36,7 +36,7 @@
         <div class="row">
           <div class="col">
             <a href="https://tonitorresportfolio.com/programacion">
-              <img src="../../assets/images/ias/code.webp" class="links-images" alt="WebP Animation">
+              <img src="../../assets/images/ias/code.webp" class="links-images" alt="WebP Animation" loaded="lazy">
             </a>
           </div>
         </div>
@@ -50,7 +50,7 @@
         <div class="row">
           <div class="col">
             <a href="https://tonitorresportfolio.com/ilustracion">
-              <img src="../../assets/images/ias/paint.webp" class="links-images" style="transform: scaleX(-1);" alt="WebP Animation">
+              <img src="../../assets/images/ias/paint.webp" class="links-images" loaded="lazy" style="transform: scaleX(-1);" alt="WebP Animation">
             </a>
           </div>
         </div>

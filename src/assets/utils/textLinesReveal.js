@@ -64,7 +64,6 @@ export class TextLinesReveal {
             // re initialize the Split Text 
             for (const instance of this.SplitTypeInstances) {
                 // re-split text
-                // https://github.com/lukePeavey/SplitType#instancesplitoptions-void
                 instance.split();
 
                 // need to wrap again the new lines elements (div with class .oh)

@@ -3,12 +3,28 @@
 @font-face {
   font-family: "Mona Sans Regular";
   src: url("../assets/fonts/Mona-Sans-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 @font-face {
   font-family: "Mona Sans SemiBold";
   src: url("../assets/fonts/Mona-Sans-SemiBold.ttf") format("truetype");
+  font-display: swap;
 }
-
+@font-face {
+  font-family: "Mona Sans Bold";
+  src: url("../assets/fonts/Mona-Sans-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mona Sans SemiBold Wide";
+  src: url("../assets/fonts/Mona-Sans-BoldWide.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mona Sans Bold Wide";
+  src: url("../assets/fonts/Mona-Sans-BoldWide.ttf") format("truetype");
+  font-display: swap;
+}
 .font-regular {
   font-family: "Mona Sans Regular";
 }
@@ -16,69 +32,116 @@
 .font-semibold {
   font-family: "Mona Sans SemiBold";
 }
+.font-bold {
+  font-family: "Mona Sans Bold";
+}
+.font-bold-wide {
+  font-family: "Mona Sans Bold Wide";
+}
+/* Colores */
 
-/* Caja negra con bordes blancos y los estilos de su interior */
-
-.parrafo {
-    height: 100%;
-    width: 100%;
-    background-color: #222222;
-    border-radius: 9px;
-    border: 4px solid #7147F5;
-    position: relative;
-  }
-  .texto-parrafo {
-    font-family: "Mona Sans Regular";
-    color: #FFFFFF;
-    font-size: 1.5vw;
-    text-align: left;
-  }
+.background_programacion_gris {
+  background-color: #2C2546 !important;
+  border:1px solid #ddd;
+}
+.background_programacion_azul_oscuro {
+  background-color: #3284ff;
+}
+.background_programacion_azul_claro {
+  background-color: #6679fb;
+}
+.background_programacion_rosa_oscuro {
+  background-color: #a85ae7;
+}
+.background_programacion_rosa_claro {
+  background-color: #c244d6;
+}
  
 /* Tipos de Texto  */
 
-  .title {
-    font-family: "Mona Sans SemiBold";
+  .introduction_title_programacion {
+    font-family: "Mona Sans Bold Wide";
     color: #FFFFFF;
-    font-size: 4vw;
+    font-size: 6vw;
     text-align: left;
   }
-  .sub-title {
+  .introduction_sub-title_programacion {
     font-family: "Mona Sans SemiBold";
     color: #FFFFFF;
-    font-size: 2vw;
+    font-size: 2.5vw;
     text-align: left;
   }
 
   .normal-text { 
-    font-family: "Mona Sans SemiBold";
+    font-family: "Mona Sans Regular";
     color: #FFFFFF;
-    /* text-align: left; */
-    font-size: 1.7vw;
+    text-align: left;
+    font-size: 1.8vw;
     font-weight: 500;
   }
 
-  .link-job:hover {
-    color: #56f59e !important;
+  .section_title_programacion {
+    color: #3284ff;
+    font-size: 5vw;
+    font-family: "Mona Sans Bold Wide";
   }
+  .section_subtitle_programacion {
+    color: #000000;
+    font-size: 2vw;
+    font-family: "Mona Sans SemiBold Wide";
+  }
+  .modal_main-text_programacion {
+    color: #000000;
+    font-size: 2vw;
+    font-family: "Mona Sans SemiBold";
+  }
+  .modal_normal-text_programacion {
+    color: #000000;
+    font-size: 2vw;
+    font-family: "Mona Sans Regular";
+  }
+  .conocimientos-text { 
+    font-family: "Mona Sans Regular";
+    color: #FFFFFF;
+    text-align: left;
+    font-size: 2vw;
+    font-weight: 500;
+  }
+/* Imagenes */
+.conocimientos-image {
+  height: 47vh;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+.figma-designs {
+  height: 30vh;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 17px;
+  border: 2px solid white;
+  background-size: 100%;
+  /* background-size: cover; */
+  transition: all 1.2s; 
+}
 
-  @media (max-width: 1500px) {
+.figma-designs:hover {
+  background-size: 140%; /* Zoom de 140% */
+}
+@media screen and (min-width: 201px) and (max-width: 993px) {
+  .conocimientos-image {
+    height: 47vh;
+    width: 50%;
+    aspect-ratio: 1 / 1;
+  }
+}
+@media (max-width: 1500px) {
     .normal-text { 
-      font-family: "Mona Sans SemiBold";
+      font-family: "Mona Sans Regular";
       color: #FFFFFF;
       /* text-align: left; */
-      font-size: 1.5vw;
+      font-size: 2vw;
       font-weight: 500;
-      padding-left: 10%;
     }
   }
 
-  @media (max-width: 1241px) {
-    .normal-text { 
-      font-family: "Mona Sans SemiBold";
-      color: #FFFFFF;
-      /* text-align: left; */
-      font-size: 1.4vw;
-      font-weight: 500;
-      padding-left: 10%;
-    }
-  }
+  

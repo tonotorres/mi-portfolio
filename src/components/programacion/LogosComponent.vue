@@ -26,4 +26,12 @@
     max-height: 40px;
     height: auto;
   }
+  @media only screen and (max-width: 1572px) { 
+    .logo-image {
+      width: auto;
+      max-height: 26px;
+      height: auto;
+    }
+  }
+
   </style>

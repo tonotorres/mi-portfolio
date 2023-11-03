@@ -28,7 +28,7 @@
                     </div>
                     <div class="grid__cell grid__cell-c4-r1">
                         <div class="grid__cell-img">
-                            <img class="grid__cell-img-inner" :src="require('../../assets/images/programacion/legalspain.png')" data-item="item-4">
+                            <img class="grid__cell-img-inner" :src="require('../../assets/images/programacion/legalspain.webp')" data-item="item-4">
 
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                         
                     </div>
                     
-                    <button id="enable-scroll" class="back row">
+                    <button id="enable-scroll" class="back row pt-2">
                         <div class="col-6"><svg viewBox="0 0 50 9" width="100%"><path d="M0 4.5l5-3M0 4.5l5 3M50 4.5h-77" stroke="white" stroke-width="2"></path></svg></div>
                         <div class="col-6"><p style="color: white" class="link-job"> Volver a mis proyectos</p></div>
                     </button>
@@ -102,7 +102,7 @@
                         </div>
                         <div class="grid__cell grid__cell-c4-r1">
                             <div class="grid__cell-img">
-                                <img class="grid__cell-img-inner" :src="require('../../assets/images/programacion/legalspain.png')">
+                                <img class="grid__cell-img-inner" :src="require('../../assets/images/programacion/legalspain.webp')">
                             </div>
                         </div>
                         <div class="grid__cell grid__cell-c1-r2">
@@ -309,7 +309,8 @@ a:focus-visible {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	padding: 0vh 8vw 0;
+	padding: 0vh 4vw 0;
+    align-items: center;
 	z-index: 1000;
 	pointer-events: none;
 	display: flex;
@@ -321,6 +322,8 @@ a:focus-visible {
 	position: absolute;
 	opacity: 0;
 	display: grid;
+    width: 100%;
+    align-items: center;
 }
 
 .content__item--current {
@@ -344,8 +347,6 @@ a:focus-visible {
 }
 
 .content__item-text {
-	max-width: 30ch;
-	margin-bottom: 2rem;
     font-size: 1.2vw;
     font-family: "Mona Sans Regular";
     color: #FFFFFF;
@@ -358,14 +359,12 @@ a:focus-visible {
 .back {
 	background: none;
 	border: 0;
-	padding: 0;
-	margin: auto 0 1.5rem 0;
+	margin: 0;
     opacity: 0;
     pointer-events: none;
     stroke: #000;
     z-index: 1000;
     cursor: pointer;
-    width: 20vw;
 }
 
 .back svg {
@@ -438,7 +437,6 @@ a:focus-visible {
 
     .col #cdawrap .cda-text::before {
         color: var(--color-text);
-        content: "Sponsored by "attr(data-sponsor);
         font-size: 0.85rem;
         font-weight: 500;
         left: 0;

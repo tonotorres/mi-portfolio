@@ -5,30 +5,28 @@
         <div id="blob"></div>
         <div id="blur"></div>
       </div>
-      
-    <FondoCodigo></FondoCodigo>
-    <IntroduccionProgram @loaded="loadedLine = true"></IntroduccionProgram>
-    <div class="row">
-      <div class="col">
-        <!-- <SkillsHoverLight></SkillsHoverLight> -->
-        <!-- <image-with-mouse-interaction :image="netluImage" /> -->
-      </div>
-    </div>
+      <FondoCodigo></FondoCodigo>
+      <IntroduccionProgram></IntroduccionProgram>
       <div class="empleos">
-        <NetluProgram :loadedLine="loadedLine" @loaded2="loadedLine2 = true"></NetluProgram>
-        <AmuraProgram :loadedLine2="loadedLine2"></AmuraProgram>
-        <SatecProgram></SatecProgram>
-        <div>
-          <div class="row">
-            <div class="col position-relative" style="height: 20vh;">
-              <svg width="20vw" height="20vh" class="dot-finish" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
-                <g id="circle_1">
-                    <ellipse id="circle" cx="410.338" cy="268.449" rx="63.688" ry="63.622" style="fill:#7147F5;stroke:#7147F5;stroke-width:65px;"/>
-                </g>
-              </svg>
-            </div>
+        <section class="row">
+          <div class="col-0"></div>
+          <div class="col-12">
+            <ExperienciaLaboral></ExperienciaLaboral>
           </div>
-          <MorePorjectsProgram></MorePorjectsProgram>
+          <div class="col-0"></div>
+        </section>
+        <section class="row">
+          <div class="col-0"></div>
+          <div class="col-12">
+            <Conocimientos></Conocimientos>
+          </div>
+          <div class="col-0"></div>
+        </section>
+        <!-- <NetluProgram :loadedLine="loadedLine" @loaded2="loadedLine2 = true"></NetluProgram> -->
+        <!-- <AmuraProgram :loadedLine2="loadedLine2"></AmuraProgram>
+        <SatecProgram></SatecProgram> -->
+        <div>
+          <!-- <MorePorjectsProgram></MorePorjectsProgram> -->
         </div>
     </div>
     
@@ -43,10 +41,9 @@
 import Socials from "../SocialsComponent.vue";
 import IntroduccionProgram from "./IntroduccionProgram.vue";
 import FondoCodigo from "./FondoCodigo.vue";
-import NetluProgram from "./NetluProgram.vue";
-import AmuraProgram from "./AmuraProgram.vue";
-import SatecProgram from "./SatecProgram.vue";
-import MorePorjectsProgram from "./MorePorjectsProgram.vue";
+import ExperienciaLaboral from "./ExperienciaLaboral.vue";
+import Conocimientos from "./Conocimientos.vue";
+// import MorePorjectsProgram from "./MorePorjectsProgram.vue";
 
 import Lenis from '@studio-freight/lenis'
 
@@ -100,8 +97,11 @@ onMounted(() => {
       top: `${clientY}px`
     }, { duration: 3000, fill: "forwards" });
   }
-  initSmoothScrolling();
-
+  let isTouchDevice = window.matchMedia('(hover: none)').matches;
+  if (!isTouchDevice) {
+    initSmoothScrolling();
+  }
+  
 });
 
 
@@ -188,4 +188,13 @@ body {
   left: 39.8%;
   z-index: 40;
 }
+@media screen and (max-height: 715px) {
+  .dot-finish {
+    position: absolute;
+    top: 44%;
+    left: 39.99%;
+    z-index: 40;
+  }
+}
+
 </style>

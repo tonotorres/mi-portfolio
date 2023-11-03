@@ -7,7 +7,7 @@
             v-for="(image, index) in images"
             :key="index"
           >
-            <img class="grid__item-inner" :src="image">
+            <img class="grid__item-inner" :src="image" loaded="lazy">
           </div>
         </div>
       </div>

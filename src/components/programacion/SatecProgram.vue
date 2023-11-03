@@ -1,5 +1,5 @@
 <template>
-  <div class="row satec" id="empleosSatec" ref="satecParrafoRef">
+  <section class="row satec" id="empleosSatec" ref="satecParrafoRef">
     <div class="svg-container" ref="svgContainer">
       <svg class="linea-svg" width="4" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path ref="lineaPath3" d="M2 0C2 51.9441 2 2050 2 2050" stroke="#7147F5" stroke-width="6" filter="url(#glow)"/>
@@ -11,19 +11,19 @@
           <div class="col-4">
             <div class="row pt-2"><div class="col"><aun-no-se-component text="Satec" fontWeight="bold" fontSize="4vw" class="amura-title"></aun-no-se-component></div></div>
             <div class="row pb-5"><div class="col"><aun-no-se-component text="2022 - 2023" fontWeight="bold"></aun-no-se-component></div></div>
-            <div class="row pt-4 px-2"><div class="col"><p class="texto-parrafo" style="text-align: center; z-index: 30;">Realizacion de la web de <a href="https://www.tuseguromovil.com/landing" class="link-job" target="_blank" style="color: #7147F5;;">insurama para clientes</a></p></div></div>
+            <div class="row pt-4 px-2"><div class="col"><p class="texto-parrafo" style="text-align: center; z-index: 30;">Realización de la web de <a href="https://www.tuseguromovil.com/landing" class="link-job" target="_blank" style="color: #7147F5;;">insurama para clientes</a></p></div></div>
             <div class="row pb-5 px-2"><logos-component :logos="logos"></logos-component></div>
           </div>
-          <div class="col-4"><div class="amuraimg-background"><div class="amuraBackground" ref="amuraBackground"></div></div></div>
+          <div class="col-4"><div class="amuraimg-background"><div class="satecBackground" ref="satecBackground"></div></div></div>
           <div class="col-4 align-middle">
-            <div class="row pt-5"><div class="col"><p class="texto-parrafo" style="text-align: center; z-index: 30;">Realizacion de la web de <a href="https://www.elpalaciodehierro.com/" class="link-job" target="_blank" style="color: #7147F5;;">Palacio de hierro para insurama</a></p></div></div>
-            <div class="row"><logos-component :logos="[require('@/assets/images/logos/vue.png'), require('@/assets/images/logos/js.png'), require('@/assets/images/logos/sass.png')]"></logos-component></div>
+            <div class="row pt-5"><div class="col"><p class="texto-parrafo" style="text-align: center; z-index: 30;">Realización de la web de <a href="https://www.elpalaciodehierro.com/" class="link-job" target="_blank" style="color: #7147F5;;">Palacio de hierro para insurama</a></p></div></div>
+            <div class="row"><logos-component :logos="[require('@/assets/images/logos/vue.svg'), require('@/assets/images/logos/js.svg'), require('@/assets/images/logos/sass.png')]"></logos-component></div>
             <div class="row pt-5"><div class="col"><p class="texto-parrafo" style="text-align: center; z-index: 30;">Realización de la web <a href="https://insurama.com/es/es/" class="link-job" target="_blank" style="color: #7147F5;;">informativa de insurama</a></p></div></div>
-            <div class="row"><logos-component :logos="[require('@/assets/images/logos/wordpress.png'), require('@/assets/images/logos/js.png'), require('@/assets/images/logos/sass.png')]"></logos-component></div>
+            <div class="row"><logos-component :logos="[require('@/assets/images/logos/wordpress.png'), require('@/assets/images/logos/js.svg'), require('@/assets/images/logos/sass.png')]"></logos-component></div>
           </div>
         </div>
       </div>
-  </div>
+  </section>
 </template>
  
 <script setup>
@@ -39,16 +39,16 @@
 
   const components = { AunNoSeComponent, LogosComponent, SatecProgram };
   const graduadoRef = ref(null);
-  const amuraBackground = ref(null);
+  const satecBackground = ref(null);
   const lineaPath3 = ref(null);
   const netluParrafoRef = ref(null);
   const logos = [
-    require('@/assets/images/logos/vue.png'),
-    require('@/assets/images/logos/php.png'),
-    require('@/assets/images/logos/js.png'),
+    require('@/assets/images/logos/vue.svg'),
+    require('@/assets/images/logos/php.svg'),
+    require('@/assets/images/logos/js.svg'),
   ];
 
-  provide('amuraBackgroundRef', amuraBackground);
+  provide('satecBackgroundRef', satecBackground);
   gsap.registerPlugin(ScrollTrigger);
 
   // Funciones
@@ -85,25 +85,6 @@
     });
   }
 
-  function SplitTextToChars(textNode) {
-    const textContent = textNode.textContent;
-    const textSplit = textContent.split('');
-
-    const frag = document.createDocumentFragment();
-    textSplit.forEach((letter, i) => {
-      const span = document.createElement('span');
-      span.textContent = letter;
-      span.style = `${letter === ' ' ? 'min-width: 1rem;' : ''}z-index: ${
-        textSplit.length - i
-      }; position: relative; display: inline-block;`;
-      frag.appendChild(span);
-    });
-    textNode.textContent = '';
-    textNode.appendChild(frag);
-
-    return textNode.children;
-  }
-
 
   // Life Cycle
 
@@ -118,6 +99,7 @@
 #empleosSatec {
   position: relative;
   height: 100vh;
+  overflow: hidden;
 }
 
 #graduado {
@@ -141,7 +123,7 @@
     min-height: 100%; /* Cambia 'height' a 'min-height' */
     overflow: visible;
   }
-  .amuraBackground {
+  .satecBackground {
     background-color: rgb(255, 255, 255);
     border: 4px solid #7147F5;
     background-image: url("../../assets/images/programacion/satec.png");
