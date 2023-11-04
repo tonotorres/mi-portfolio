@@ -6,27 +6,31 @@
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_title_programacion">{{$t("experiencia_netlu_titulo")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_subtitle_programacion">{{$t("experiencia_netlu_fecha")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_main-text_programacion pt-4">{{$t("experiencia_netlu_subtitulo")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-4">{{$t("experiencia_netlu_textos_1")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-4">{{$t("experiencia_netlu_textos_2")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_netlu_textos_1")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_netlu_textos_2")}}</h2></div><div class="col-1"></div></div>
+      <div class="row" v-if="isNotTouchDevice"><div class="col-1"></div><logos-component :logos="experiencia_netlu_logos"></logos-component><div class="col-1"></div></div>
     </dialog>
     <dialog id="amuraModal" class="modal-personalizado " >  
       <div class="row"><div class="col text-end"><button id="hideAmura" class="close-button mr-4"><img src="../../assets/images/programacion/cruz.svg" alt="Close"></button></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_title_programacion">{{$t("experiencia_amura_titulo")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_subtitle_programacion">{{$t("experiencia_amura_fecha")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_main-text_programacion pt-4">{{$t("experiencia_amura_subtitulo")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-4">{{$t("experiencia_amura_textos_1")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-4">{{$t("experiencia_amura_textos_2")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-4">{{$t("experiencia_amura_textos_3")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_amura_textos_1")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_amura_textos_2")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_amura_textos_3")}}</h2></div><div class="col-1"></div></div>
+      <div class="row" v-if="isNotTouchDevice"><div class="col-1"></div><logos-component :logos="experiencia_amura_logos"></logos-component><div class="col-1"></div></div>
     </dialog>
     <dialog id="satecModal" class="modal-personalizado " >  
       <div class="row"><div class="col text-end"><button id="hideSatec" class="close-button mr-4"><img src="../../assets/images/programacion/cruz.svg" alt="Close"></button></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_title_programacion">{{$t("experiencia_satec_titulo")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_subtitle_programacion">{{$t("experiencia_satec_fecha")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_main-text_programacion pt-4">{{$t("experiencia_satec_subtitulo")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-4">{{$t("experiencia_satec_textos_1")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-4">{{$t("experiencia_satec_textos_2")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-4">{{$t("experiencia_satec_textos_3")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-4">{{$t("experiencia_satec_textos_4")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_satec_textos_1")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_satec_textos_2")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_satec_textos_3")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_satec_textos_4")}}</h2></div><div class="col-1"></div></div>
+      <div class="row" v-if="isNotTouchDevice"><div class="col-1"></div><logos-component :logos="experiencia_satec_logos"></logos-component><div class="col-1"></div></div>
+
     </dialog>
     <dialog id="jlModal" class="modal-personalizado " >  
       <div class="row"><div class="col text-end"><button id="hideJL" class="close-button mr-4"><img src="../../assets/images/programacion/cruz.svg" alt="Close" style="filter: invert(1);"></button></div></div>
@@ -35,7 +39,8 @@
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_main-text_programacion text-white pt-4">{{$t("experiencia_jl_subtitulo")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion text-white pt-4">{{$t("experiencia_jl_textos_1")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion text-white pt-4">{{$t("experiencia_jl_textos_2")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-center"><h2 class="section_subtitle_programacion  text-white pt-4">{{$t("ver_proyecto")}}</h2></div><div class="col-1"></div></div>
+      <div class="row" v-if="isNotTouchDevice"><div class="col-1"></div><logos-component :logos="experiencia_jl_logos"></logos-component><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-center"><a href="https://jlsound.es/" target="_blank" class="section_subtitle_programacion text-white pt-4 d-block">{{$t("ver_proyecto")}}</a></div><div class="col-1"></div></div>
     </dialog>
     <dialog id="legalModal" class="modal-personalizado " >  
       <div class="row"><div class="col text-end"><button id="hideLegal" class="close-button mr-4"><img src="../../assets/images/programacion/cruz.svg" alt="Close" style="filter: invert(1);"></button></div></div>
@@ -43,7 +48,8 @@
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_subtitle_programacion text-white">{{$t("experiencia_legal_fecha")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_main-text_programacion text-white pt-4">{{$t("experiencia_legal_subtitulo")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion text-white pt-4">{{$t("experiencia_legal_textos_1")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-center"><h2 class="section_subtitle_programacion text-white pt-4">{{$t("ver_proyecto")}}</h2></div><div class="col-1"></div></div>
+      <div class="row" v-if="isNotTouchDevice"><div class="col-1"></div><logos-component :logos="experiencia_legal_logos"></logos-component><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-center"><a href="https://legalspain.es/" target="_blank"  class="section_subtitle_programacion text-white pt-4 d-block">{{$t("ver_proyecto")}}</a></div><div class="col-1"></div></div>
     </dialog>  
 
     <!-- Sección -->
@@ -58,32 +64,27 @@
           <ul>
             <li class="imagen-empleo">
               <a id="showNetlu" class="link-empleo">
-                <span>Mount Everest</span>
-                <img src="..\..\assets\images\programacion\netlu.webp" />
+                <img src="..\..\assets\images\programacion\netlu.webp" style="aspect-ratio: 16 / 9;" />
               </a>
             </li>
             <li class="imagen-empleo">
               <a id="showAmura" class="link-empleo">
-                <span>K2</span>
-                <img src="..\..\assets\images\programacion\amura.webp" />
+                <img src="..\..\assets\images\programacion\amura.webp" style="aspect-ratio: 16 / 9;" />
               </a>
             </li>
             <li class="imagen-empleo"> 
               <a id="showSatec" class="link-empleo">
-                <span>Kangchenjunga</span>
-                <img src="..\..\assets\images\programacion\satec.webp" />
+                <img src="..\..\assets\images\programacion\satec.webp" style="aspect-ratio: 16 / 9;" />
               </a>
             </li>
             <li class="imagen-empleo">
               <a id="showJL" class="link-empleo">
-                <span>Lhotse</span>
-                <img src="..\..\assets\images\programacion\jlsound.webp" loading="lazy"/>
+                <img src="..\..\assets\images\programacion\jlsound.webp" style="aspect-ratio: 16 / 9;" loading="lazy"/>
               </a>
             </li>
             <li class="imagen-empleo">
               <a id="showLegal" class="link-empleo">
-                <span>Lhotse</span>
-                <img src="..\..\assets\images\programacion\legalspain.webp" loading="lazy"/>
+                <img src="..\..\assets\images\programacion\legalspain.webp" style="aspect-ratio: 16 / 9;" loading="lazy"/>
               </a>
             </li>
           </ul>
@@ -94,7 +95,9 @@
   </template>
    
   <script setup>
-    import { onMounted, ref } from "vue";
+    import LogosComponent from "./LogosComponent.vue";
+
+    import { onMounted, onBeforeMount, computed, nextTick } from "vue";
     import { gsap } from "gsap";
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -102,29 +105,54 @@
 
     var elLinks = null
     var elItems = null
-    var elImage = null
+    var isTouchDevice = true;
+    const isNotTouchDevice = computed(() => !isTouchDevice);
 
-    function titleFadeIn (elItem) {
-      /* Motion for touch devices */
-      // The title will fade in when the card enters the viewport
-      const elTitle = elItem.querySelector('span');
-      gsap.set(elTitle, {
-        y: 0
-      });
-      gsap.fromTo(elTitle, {
-        opacity: 0
-      }, {
-        opacity: 1,
-        duration: 0.4,
-        ease: "power2.inOut",
-        scrollTrigger: {
-          trigger: elItem,
-          start: "center 75%",
-          end: "center 40%",
-          toggleActions: "play reverse restart reverse"
-        }
-      });
-    }
+    const experiencia_netlu_logos = [
+      require('@/assets/images/logos/vue.svg'),
+      require('@/assets/images/logos/js.svg'),
+      require('@/assets/images/logos/css.svg'),
+      require('@/assets/images/logos/bootstrap.svg'),
+      require('@/assets/images/logos/node.png'),
+      require('@/assets/images/logos/react.svg'),
+      require('@/assets/images/logos/laravel.png'),
+
+    ];
+    const experiencia_amura_logos = [
+      require('@/assets/images/logos/vue.svg'),
+      require('@/assets/images/logos/js.svg'),
+      require('@/assets/images/logos/css.svg'),
+      require('@/assets/images/logos/jquery.png'),
+      require('@/assets/images/logos/node.png'),
+      require('@/assets/images/logos/react.svg'),
+      require('@/assets/images/logos/MongoDB.png'),
+      require('@/assets/images/logos/express.png'),
+      require('@/assets/images/logos/python.png'),
+    ];
+    const experiencia_satec_logos = [
+      require('@/assets/images/logos/vue.svg'),
+      require('@/assets/images/logos/js.svg'),
+      require('@/assets/images/logos/css.svg'),
+      require('@/assets/images/logos/sass.png'),
+      require('@/assets/images/logos/php.svg'),
+      require('@/assets/images/logos/wordpress.png'),
+      require('@/assets/images/logos/bootstrap.svg'),
+    ];
+    const experiencia_jl_logos = [
+      require('@/assets/images/logos/vue.svg'),
+      require('@/assets/images/logos/js.svg'),
+      require('@/assets/images/logos/css.svg'),
+      require('@/assets/images/logos/sass.png'),
+      require('@/assets/images/logos/threejs.png'),
+      require('@/assets/images/logos/gsap.png'),
+      require('@/assets/images/logos/webgl.png'),
+    ];
+    const experiencia_legal_logos = [
+      require('@/assets/images/logos/wordpress.png'),
+      require('@/assets/images/logos/js.svg'),
+      require('@/assets/images/logos/css.svg'),
+      require('@/assets/images/logos/seo.png'),
+    ];
 
     /* When the mouse is entering */
     function onLinkEnter (elHoveredLink) {
@@ -180,16 +208,16 @@
     }
 
 
-
-    onMounted(() => {
+    onBeforeMount(() => {
+      isTouchDevice = window.matchMedia('(hover: none)').matches;
+    }),
+    onMounted(async () => {
       
-    let isTouchDevice = window.matchMedia('(hover: none)').matches;
-
-
     /* Add mouse listeners on every card */
     elLinks = document.querySelectorAll('.link-empleo');
     elItems = document.querySelectorAll('.imagen-empleo');
-    if (!isTouchDevice) {
+    await nextTick()
+    if (isNotTouchDevice.value) {
       // Add mouse event listener only if it is not a touch device
       elLinks.forEach(elLink => {
         elLink.addEventListener('mouseleave', () => onLinkLeave(elLink));
@@ -199,12 +227,7 @@
     /* Create the fade-in animation of the cards */
 
     elItems.forEach(elItem => {
-      console.log(elItem)
-      /* Create a fade-in of the card title for touch devices */
-      if (isTouchDevice) {
-        titleFadeIn(elItem);
-      }
-  
+
       // Skip the transition if the element is already in the viewport
       const bbox = elItem.getBoundingClientRect();
       if (bbox.bottom > 0 && bbox.top < window.innerHeight) {

@@ -1,36 +1,36 @@
 <template>
     <section class="container-fluid pt-4 introduccion">
       <div class="row pt-4">
-          <div class="col-1"></div>
-          <div class="col-3 fondo-imagen">
+          <div class="col-1 d-md-block d-sm-none"></div>
+          <div class="col-md-3 col-sm-12 fondo-imagen">
             <img class="responsive-image" src="@/assets/images/mi_foto.webp" alt="Este soy yo!">
           </div>
-          <div class="col-7" style="padding-left: 3vw;">
+          <div class="col-md-7 col-sm-12" style="padding-left: 3vw;">
               <div class="row pt-0">
                 <div class="col pl-4">
-                    <div class="row pb-1"><div class="col"><h2 class="introduction_title_programacion" v-html="scrambledTitle"></h2></div></div>
-                    <div class="row pb-1"><div class="col"><h4 class="introduction_sub-title_programacion" v-html="scrambledSubTitle"></h4></div></div>
-                    <div class="row"><div class="col"><p class="normal-text">{{$t("introduccion_texto")}}{{$t("introduccion_texto_2")}}</p></div></div>
+                    <div class="row pb-1"><div class="col"><h2 class="introduction_title_programacion text-md-start text-sm-center" v-html="scrambledTitle"></h2></div></div>
+                    <div class="row pb-1"><div class="col"><h4 class="introduction_sub-title_programacion text-md-start text-sm-center" v-html="scrambledSubTitle"></h4></div></div>
+                    <div class="row"><div class="col"><p class="normal-text text-md-start text-sm-center">{{$t("introduccion_texto")}}{{$t("introduccion_texto_2")}}</p></div></div>
                     <div class="row">
-                      <div class="col col_links">
+                      <div class="col col_links d-md-block d-flex justify-content-center">
                         <div class="flex-container">
-                          <div class="flex-slide home background_programacion_gris">
+                          <a class="flex-slide home background_programacion_gris" href="https://www.linkedin.com/in/toni-torres-cabero-73649921a/" target="_blank" >
                             <div class="flex-title"><img src="../../assets/images/logos/linkedin.svg" alt="LinkedIn" class="img-link"><p class="flex-about pt-1">{{$t("introduccion_linkedin")}}</p></div>
-                          </div>
-                          <div class="flex-slide about background_programacion_gris">
+                          </a>
+                          <a class="flex-slide about background_programacion_gris" href="https://github.com/tonotorres" target="_blank">
                             <div class="flex-title"><img src="../../assets/images/logos/github.svg" alt="GitHub" class="img-link"><p class="flex-about pt-1">{{$t("introduccion_github")}}</p></div>
 
-                          </div>
-                          <div class="flex-slide-cv work background_programacion_gris">
+                          </a>
+                          <a class="flex-slide-cv work background_programacion_gris" href="">
                             <div class="flex-title"><img src="../../assets/images/logos/descargar_cv.svg" alt="Descargar CV" class="img-link"><p class="flex-about pt-1">{{$t("introduccion_cv")}}</p></div>
-                          </div>
+                          </a>
                         </div>
                       </div>
                   </div>
                 </div>
               </div>
           </div>
-          <div class="col-1"></div>
+          <div class="col-1 d-md-block d-sm-none"></div>
       </div>
     </section>
   </template>
@@ -370,6 +370,25 @@
     }
     .flex-title:hover .img-link {
       left: 31%;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .responsive-image {
+      height: auto;
+      width: 50vh;
+      position: relative;
+      border-radius: 9px;
+      position: relative;
+      outline: 1px solid white;
+      background-image: linear-gradient(to left, #c244d6c9, #a85ae7, #8a6bf3, #6679fb, #3284ffcb);
+      -webkit-animation: none;
+              animation: none;
+    }
+    .fondo-imagen {
+        background-image: none;
+        border-radius: 0px;
+        position: relative;
+        outline: 0px;
     }
   }
   @media screen and (min-width: 100px) and (max-width: 720px) {

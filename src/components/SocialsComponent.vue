@@ -26,12 +26,6 @@ export default {
   --blue: rgb(41, 121, 255);
 }
 
-@font-face {
-  font-family: "Mona Sans SemiBold";
-  src: url("../assets/fonts/Mona-Sans-SemiBold.ttf") format("truetype");
-}
-
-
 ul li a:before {
   content: "";
   width: 0;

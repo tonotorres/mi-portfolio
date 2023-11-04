@@ -1,11 +1,11 @@
 <template>
   <div id="code" ref="code">
     <div class="row"><div class="col">
-      <div class="blop">
+      <div class="blop" v-if="isNotTouchDevice">
         <div id="blob"></div>
         <div id="blur"></div>
       </div>
-      <FondoCodigo></FondoCodigo>
+      <FondoCodigo v-if="isNotTouchDevice"></FondoCodigo>
       <IntroduccionProgram></IntroduccionProgram>
       <div class="empleos">
         <section class="row">
@@ -47,14 +47,15 @@ import Conocimientos from "./Conocimientos.vue";
 
 import Lenis from '@studio-freight/lenis'
 
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onBeforeMount, nextTick, computed  } from 'vue';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const loadedLine = ref(false);
 const loadedLine2 = ref(false);
 const lenis = ref(null);
-
+var isTouchDevice = true;
+const isNotTouchDevice = computed(() => !isTouchDevice);
 gsap.registerPlugin(ScrollTrigger);
 
  // Function to initialize Lenis for smooth scrolling
@@ -86,19 +87,26 @@ gsap.registerPlugin(ScrollTrigger);
     // Start the animation frame loop
     requestAnimationFrame(scrollFn);
   };
-onMounted(() => {
-  const blob = document.getElementById("blob");
-
-  window.onpointermove = event => { 
-    const { clientX, clientY } = event;
+  onBeforeMount(() => {
+    isTouchDevice = window.matchMedia('(hover: none)').matches;
     
-    blob.animate({
-      left: `${clientX}px`,
-      top: `${clientY}px`
-    }, { duration: 3000, fill: "forwards" });
-  }
-  let isTouchDevice = window.matchMedia('(hover: none)').matches;
-  if (!isTouchDevice) {
+  }),
+  onMounted(async () => {
+  
+  
+  await nextTick()
+  
+  if (isNotTouchDevice.value) {
+    const blob = document.getElementById("blob");
+
+    window.onpointermove = event => { 
+      const { clientX, clientY } = event;
+      
+      blob.animate({
+        left: `${clientX}px`,
+        top: `${clientY}px`
+      }, { duration: 3000, fill: "forwards" });
+    }
     initSmoothScrolling();
   }
   

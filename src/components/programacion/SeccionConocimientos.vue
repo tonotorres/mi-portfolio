@@ -89,6 +89,7 @@
         <div class="col-1"></div>
       </div>
     </template>
+    <!-- bootstrap -->
     <template v-if="optionSelectedComputed == 5">
       <div class="row pt-4">
         <div class="col-1"></div>
@@ -101,18 +102,66 @@
         <div class="col-1"></div>
       </div>
     </template>
+    <!-- SCSS -->
     <template v-if="optionSelectedComputed == 6">
       <div class="row pt-4">
-        <div class="col" style="position: relative;">
+        <div class="col" style="position: relative; height: 50vh;">
           <section class="container-scss">
-            <h1 class="texto-scss">
-              <span class="title">This is</span>
-              <span class="title">a long</span>
-              <span class="title">long title</span>
+            <h1 style="display: none;" id="boton">
+              <span class="title" v-for="(word, index) in titleWords" :key="index">
+                <span v-for="(letter, i) in word.split('')" :key="i">{{ letter }}</span>
+              </span>
             </h1>
-            <div class="button-scss" :click="restartAnimation()">restart</div>
+            <button class="button" @click="animation">Dale al botón</button>
           </section>
         </div>
+      </div>
+    </template>
+    <!-- Spline  -->
+    <div v-show="optionSelectedComputed == 7">
+      <div class="row pt-4">
+        <div class="col" style="position: relative; height: 872px;">
+          <!-- <h2 class="introduction_title_programacion" style="position: absolute; top: 0px; left: 0px;">SPLINE PERMITE HACER COSAS COMO ESTAS</h2> -->
+          <div class="box medium">
+            <a href="https://spline.design/" target="_blank" class="glitch">{{$t("conocimientos_spline")}}</a>
+          </div>
+          <canvas id="container" ></canvas>
+        </div>
+      </div>
+    </div>
+    <!-- Node  -->
+    <template v-if="optionSelectedComputed == 8">
+      <div class="row pt-4">
+        <div class="col-1"></div>
+        <div class="col-3">
+          <img class="conocimientos-image" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[8]"  alt="Vue">
+        </div>
+        <div class="col-7 text-start">
+          <h2 class="normal-text">{{$t("conocimientos_node")}}</h2>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    </template>
+    <template v-if="optionSelectedComputed == 9">
+      <div class="row pt-4">
+        <div class="col-1"></div>
+        <div class="col-3">
+          <img class="conocimientos-image" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[9]"  alt="Vue">
+        </div>
+        <div class="col-7 text-start">
+          <h2 class="normal-text">{{$t("conocimientos_react")}}</h2>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    </template>
+    <template v-if="optionSelectedComputed == 10">
+      <div class="row pt-4">
+        <div class="col-1"></div>
+        <div class="col-10 text-start">
+          <img class="conocimientos-image" ref="amuraBackgroundRef" loading="lazy" style="position: relative; z-index: 20; min-width: 50vw; height: auto;" :src="logos[10]"  alt="Vue">
+          <ImageGlitch></ImageGlitch>
+        </div>
+        <div class="col-1"></div>
       </div>
     </template>
   </template>
@@ -120,9 +169,11 @@
   <script setup>
     import JuegoJavascript from "./JuegoJavascript.vue";
     import JuegoCss from "./JuegoCss.vue";
+    import ImageGlitch from "../ImageGlitch.vue";
 
-    import { onMounted, nextTick, ref, computed } from "vue";
-
+    import { onMounted, nextTick, watch, ref, computed } from "vue";
+    import { Application } from '@splinetool/runtime';
+    import { TimelineMax, Back } from 'gsap'
     import { gsap } from "gsap";
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -139,9 +190,9 @@
       require('@/assets/images/logos/spline.png'),
       require('@/assets/images/logos/node.png'),
       require('@/assets/images/logos/react.svg'),
-      require('@/assets/images/logos/webgl.png'),
-      require('@/assets/images/logos/jquery.png'),
-      require('@/assets/images/logos/threejs.svg'),
+      // require('@/assets/images/logos/webgl.png'),
+      // require('@/assets/images/logos/jquery.png'),
+      require('@/assets/images/logos/threejs.png'),
 
     ];
     const props = defineProps({
@@ -157,20 +208,26 @@
       return props.optionSelected
     })
 
+    const titleWords = ref(['PUEDES VER COMO', 'TRABAJO CON SCSS', 'CLICANDO AQUI'])
 
-    function animation() {
+    const animation = () => {
+      document.getElementById('boton').classList.add('show-element');
       var title1 = gsap.timeline();
-      title1.set(".button", {visibility: 'hidden', opacity: 0})
-      title1.fromTo(".title span", 
-        {ease: "back.out(1.7)", opacity: 0, bottom: -80},
-        {ease: "back.out(1.7)", opacity: 1, bottom: 0, stagger: 0.05});
-      gsap.to(".button", {duration: 0.2, visibility: 'visible', opacity: 1});
+      title1.to(".button", 0, {display: 'none', opacity: 0})
+      title1.staggerFromTo(".title span", 0.5, 
+      {ease: Back.easeOut.config(1.7), opacity: 0, bottom: -80},
+      {ease: Back.easeOut.config(1.7), opacity: 1, bottom: 0}, 0.05);
     }
-    function restartAnimation() {
-      animation();
-    }
-    onMounted(async () => {
+    watch(optionSelectedComputed, (newValue, oldValue) => {
+      if (newValue === 7) {
+        const canvas = document.getElementById('container');
+        const app = new Application(canvas);
 
+        app.load('https://prod.spline.design/TYPY4gxfsCOJ0VCa/scene.splinecode');
+      }
+    });
+    onMounted(async () => {
+      
     });
 
   </script>
@@ -184,6 +241,9 @@
 .figma_jl {
   background-image: url('../../assets/images/programacion/figma_jl.webp');
 }
+.show-element {
+  display: block !important;
+}
 .dialogo-javascript {
     width: 100%;
     height: 373px;
@@ -194,37 +254,90 @@
   left: 50%;
   display: block;
   position: absolute;
-  max-width: 225px;
+  width: 100%;
+  max-width: 70vw;
   font-family: "Mona Sans SemiBold Wide";
 }
-
+#container {
+  position: absolute;
+  top: 0px;
+  left: 30%;
+  width: 772px;
+  height: 872px;
+}
 .texto-scss{
   color: #fff;
   text-transform: uppercase;
-  font-size: 42px;
+  font-size: 6vw;
   margin: 0;
   line-height: 47px;
   letter-spacing: 2px;
 }
 
 .title{
-  transform: translateX(-50%) rotate(-10deg);
+  transform: translateX(-50%) rotate(-2deg);
   display: block;
   float: left;
   left: 50%;
   position: relative;
-  
+  font-size: 6.5rem;;
   span {
-    transform: skew(-10deg);
+    transform: skew(-2deg);
     display: block;
     float: left;
     text-shadow: #d34296 1px 1px, #d34296 2px 2px, #d34296 3px 3px, #d34296 4px 4px, #d34296 5px 5px, #d34296 6px 6px;
-    min-width: 10px;
-    min-height: 10px;
+    min-width: 1vw;
+    min-height: 1vh;
     position: relative;
   }
 }
+button{
+  height: 20vh;
+  width: 50%;
+		margin: 7px;
+		border: 0.1px solid #e55643;
+		padding: 5px;
+		font-size: 4rem;
+    border: 3px solid #d34296;
+    text-shadow: #d34296 1px 1px, #d34296 2px 2px, #d34296 3px 3px, #d34296 4px 4px, #d34296 5px 5px, #d34296 6px 6px;
+		background: linear-gradient(
+	-90deg,
+	#4c60ff,
+	#2b9f5e,
+	#f1c83c,
+	#f9598f
+);
+		background-size: 600%;
+		color: #fff;
+		cursor: pointer;
+		animation: anime 15s linear infinite;
+		transition: 0.3s;
+}
+	@keyframes anime {
+			0% {
+				background-position: 0% 50%;
+			}
+			50% {
+				background-position: 100% 50%;
+			}
+			100% {
+				background-position: 0% 50%;
+			}
+		}
 
+button:focus{
+  		border: 2px solid;
+			border-color: inherit;
+			outline: none;
+}
+
+button:hover{
+  opacity: 0.9;
+}
+
+button:active{
+  border: 5px solid #2b9f5e;
+}
 .title{
   &:nth-child(1){
     color: #e55643;
@@ -240,6 +353,128 @@
     .dialogo-javascript{
         width: 100%;
         height: 372px;;
+    }
+}
+// Efecto Glitch
+
+.box {
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+.glitch {
+  font-size: 35vw;
+  line-height: 1;
+  font-family: 'Mona Sans SemiBold Wide';
+  font-weight: 700;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  text-decoration: none;
+  color: #fff;
+  &:before,
+  &:after{
+    display: block;
+    content: '10';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .8;
+  }
+  &:after {
+    color: #f0f;
+    z-index: -2;
+  }
+  &:before {
+    color: #0ff;
+    z-index: -1;
+  }
+  &:hover {
+    &:before {
+      animation: glitch-left 3s cubic-bezier(.25, .46, .45, .94) both infinite
+    }
+    &:after {
+      animation: glitch-left-2 3s cubic-bezier(.25, .46, .45, .94) reverse both infinite
+    }
+  }
+  .medium & {
+    font-size: 8.7vh;
+    letter-spacing: 2px;
+    text-align: center;
+    color: white;
+    width: 100%;
+    &:before,
+    &:after{
+      content: 'SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE ';
+    }
+    &:after {
+      color: #C487C2;
+    }
+    &:before {
+      color: #00FF02;
+    }
+    &:hover {
+    &:before {
+        animation: glitch-medium 2.5s cubic-bezier(.25, .46, .45, .94) both infinite
+      }
+      &:after {
+        animation: glitch-medium 2.5s cubic-bezier(.25, .46, .45, .94) reverse both infinite
+      }
+    }
+  }
+}
+
+@keyframes glitch-medium {
+    0% {
+        transform: translate(0)
+    }
+    20% {
+        transform: translate(-2px, 2px)
+    }
+    40% {
+        transform: translate(-2px, -2px)
+    }
+    60% {
+        transform: translate(2px, 2px)
+    }
+    80% {
+        transform: translate(2px, -2px)
+    }
+    to {
+        transform: translate(0)
+    }
+}
+@keyframes glitch-left {
+    0% {
+        transform: translate(0)
+    }
+    33% {
+        transform: translate(-5px, 3px)
+    }
+    66% {
+        transform: translate(5px, -3px)
+    }
+    to {
+        transform: translate(0)
+    }
+}
+@keyframes glitch-left-2 {
+    0% {
+        transform: translate(0)
+    }
+    33% {
+        transform: translate(-5px, -3px)
+    }
+    66% {
+        transform: translate(5px, 2px)
+    }
+    to {
+        transform: translate(0)
     }
 }
 </style>
