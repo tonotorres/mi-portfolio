@@ -1,5 +1,5 @@
 <template>
-    <div class="row" style="height: 10vh;"></div>
+    <div class="row" id="conocimientos" style="height: 10vh;"></div>
     <div class="row ">
       <div class="col text-center"><h2 class="section_title_programacion">{{$t("conocimientos_titulo")}}</h2></div>
     </div>
@@ -41,7 +41,7 @@
       require('@/assets/images/logos/react.svg'),
       // require('@/assets/images/logos/webgl.png'),
       // require('@/assets/images/logos/jquery.png'),
-      require('@/assets/images/logos/threejs.png'),
+      // require('@/assets/images/logos/threejs.png'),
 
     ];
     var optionSelected = ref(null)
@@ -51,7 +51,7 @@
     var viewport = null
     var proxy = null
 
-    const numBoxes  = 11;  
+    const numBoxes  = 10;  
     const boxWidth  = 250;
     const boxHeight = 250;
 

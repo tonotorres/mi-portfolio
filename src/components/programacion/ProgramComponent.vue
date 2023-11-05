@@ -22,6 +22,19 @@
           </div>
           <div class="col-0"></div>
         </section>
+        <section class="row formulario-fondo">
+          <div class="row w-100" style="height: 20vh;"></div>
+          <div class="row w-100">
+            <div class="col d-flex justify-content-center"><h1 class="section_title_programacion color-white">{{$t("formulario_titulo")}}</h1></div>
+        </div>
+        <div class="row w-100 ">
+          <div class="col-1"></div>
+          <div class="col-10">
+            <FormularioContacto></FormularioContacto>
+          </div>
+          <div class="col-1"></div>
+        </div>
+        </section>
         <!-- <NetluProgram :loadedLine="loadedLine" @loaded2="loadedLine2 = true"></NetluProgram> -->
         <!-- <AmuraProgram :loadedLine2="loadedLine2"></AmuraProgram>
         <SatecProgram></SatecProgram> -->
@@ -43,6 +56,7 @@ import IntroduccionProgram from "./IntroduccionProgram.vue";
 import FondoCodigo from "./FondoCodigo.vue";
 import ExperienciaLaboral from "./ExperienciaLaboral.vue";
 import Conocimientos from "./Conocimientos.vue";
+import FormularioContacto from "./FormularioContacto.vue";
 // import MorePorjectsProgram from "./MorePorjectsProgram.vue";
 
 import Lenis from '@studio-freight/lenis'
@@ -109,6 +123,27 @@ gsap.registerPlugin(ScrollTrigger);
     }
     initSmoothScrolling();
   }
+  gsap.to(".empleos", {
+  scrollTrigger: {
+    trigger: "#conocimientos",
+    markers: true,
+    start: "top center", // Ajusta esto según dónde quieras que se active el cambio
+    onEnter: function() {
+      gsap.to(".empleos", {
+        backgroundImage: "radial-gradient(rgb(5, 5, 5) 14px, white 9px)",
+        backgroundSize: "20px 20px",
+        duration: 1 // Ajusta la duración de la transición según tus necesidades
+      });
+    },
+    onLeaveBack: function() {
+      gsap.to(".empleos", {
+        backgroundImage: "radial-gradient(hsla(0,0%,58%,.3) 1px,transparent 0)",
+        backgroundSize: "20px 20px",
+        duration: 1 // Ajusta la duración de la transición según tus necesidades
+      });
+    }
+  }
+});
   
 });
 
@@ -195,6 +230,10 @@ body {
   top: -10%;
   left: 39.8%;
   z-index: 40;
+}
+.formulario-fondo {
+  background: rgb(2,0,36);
+background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgb(29, 5, 116) 20%, rgb(90, 116, 231) 65%, #050505 100%);
 }
 @media screen and (max-height: 715px) {
   .dot-finish {

@@ -154,22 +154,11 @@
         <div class="col-1"></div>
       </div>
     </template>
-    <template v-if="optionSelectedComputed == 10">
-      <div class="row pt-4">
-        <div class="col-1"></div>
-        <div class="col-10 text-start">
-          <img class="conocimientos-image" ref="amuraBackgroundRef" loading="lazy" style="position: relative; z-index: 20; min-width: 50vw; height: auto;" :src="logos[10]"  alt="Vue">
-          <ImageGlitch></ImageGlitch>
-        </div>
-        <div class="col-1"></div>
-      </div>
-    </template>
   </template>
    
   <script setup>
     import JuegoJavascript from "./JuegoJavascript.vue";
     import JuegoCss from "./JuegoCss.vue";
-    import ImageGlitch from "../ImageGlitch.vue";
 
     import { onMounted, nextTick, watch, ref, computed } from "vue";
     import { Application } from '@splinetool/runtime';
@@ -192,7 +181,7 @@
       require('@/assets/images/logos/react.svg'),
       // require('@/assets/images/logos/webgl.png'),
       // require('@/assets/images/logos/jquery.png'),
-      require('@/assets/images/logos/threejs.png'),
+      // require('@/assets/images/logos/threejs.png'),
 
     ];
     const props = defineProps({
@@ -434,16 +423,16 @@ button:active{
         transform: translate(0)
     }
     20% {
-        transform: translate(-2px, 2px)
+        transform: translate(-4px, 4px)
     }
     40% {
-        transform: translate(-2px, -2px)
+        transform: translate(-4px, -4px)
     }
     60% {
-        transform: translate(2px, 2px)
+        transform: translate(4px, 4px)
     }
     80% {
-        transform: translate(2px, -2px)
+        transform: translate(4px, -4px)
     }
     to {
         transform: translate(0)
@@ -454,10 +443,10 @@ button:active{
         transform: translate(0)
     }
     33% {
-        transform: translate(-5px, 3px)
+        transform: translate(-7px, 5px)
     }
     66% {
-        transform: translate(5px, -3px)
+        transform: translate(7px, -5px)
     }
     to {
         transform: translate(0)
@@ -468,10 +457,10 @@ button:active{
         transform: translate(0)
     }
     33% {
-        transform: translate(-5px, -3px)
+        transform: translate(-7px, -5px)
     }
     66% {
-        transform: translate(5px, 2px)
+        transform: translate(7px, 6px)
     }
     to {
         transform: translate(0)

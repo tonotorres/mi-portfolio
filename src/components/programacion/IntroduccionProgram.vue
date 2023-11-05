@@ -101,39 +101,11 @@
   }
   .fondo-imagen {
     background-image: linear-gradient(to left, #c244d6c9, #a85ae7, #8a6bf3, #6679fb, #3284ffcb);
-  -webkit-animation: AnimateBG 5s ease infinite;
-          animation: AnimateBG 5s ease infinite;
     border-radius: 9px;
     position: relative;
-    outline: 1px solid white;
+    outline: 3px solid white;
 
 }
-
-@-webkit-keyframes AnimateBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes AnimateBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-  
-
 
   /* Nuevos estilos links*/
   .col_links {
@@ -211,10 +183,7 @@
     height: 100%;
     width: auto;
     position: absolute;
-    left: 45%;
     padding: 5px;
-  }
-  .img-link {
     left: 37%;
     transition: left 0.6s;
   }

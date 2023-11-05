@@ -56,7 +56,9 @@
 .background_programacion_rosa_claro {
   background-color: #c244d6;
 }
- 
+ .color-white {
+    color: white !important;
+ }
 /* Tipos de Texto  */
 
   .introduction_title_programacion {
@@ -79,7 +81,7 @@
 
   .section_title_programacion {
     color: #3284ff;
-    font-size: 5vw;
+    font-size: 7vw;
     font-family: "Mona Sans Bold Wide";
   }
   .section_subtitle_programacion {
