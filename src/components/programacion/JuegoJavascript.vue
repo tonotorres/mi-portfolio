@@ -99,17 +99,17 @@ function clicked(event){
 #juego-javascript{
     border:1px solid #ddd;
     width: 464px;
-    height: 373px;
+    height: 102%;
 }
 
 .tile_box{
   display:block;
   float:left;
-  width:80px;
+  width: 22%;
   height: 80px;
-  background:#ddd;
-  margin-left:10px;
-  margin-top:10px;
+  background: #ddd;
+  margin-left: 2.5%;
+  margin-top: 3%;
   text-decoration:none;
   color:#333;
   font-family:Arial;
@@ -132,8 +132,8 @@ function clicked(event){
 }
 @media screen and (min-width: 400px) and (max-width: 1500px) {
     #juego-javascript{
-        width: 462px;
-        height: 372px;;
+        width: 100%;
+        height: 102%;
     }
 }
 </style>

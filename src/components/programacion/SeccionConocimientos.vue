@@ -1,21 +1,21 @@
 <template>
     <template v-if="optionSelectedComputed == 0">
-      <div class="row pt-4">
+      <div class="row pt-4 seccion-conocimiento">
         <div class="col-1"></div>
         <div class="col-3">
-          <img class="conocimientos-image" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[0]"  alt="Vue">
+          <img class="conocimientos-image img-fluid h-75" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[0]"  alt="Vue">
         </div>
-        <div class="col-7 text-start">
+        <div class="col-7 text-start h-100">
           <h2 class="normal-text">{{$t("conocimientos_vue")}}</h2>
         </div>
         <div class="col-1"></div>
       </div>
     </template>
     <template v-if="optionSelectedComputed == 1">
-      <div class="row pt-4">
+      <div class="row pt-4 seccion-conocimiento">
         <div class="col-1"></div>
         <div class="col-3">
-          <img class="conocimientos-image" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[1]"  alt="Figma">
+          <img class="conocimientos-image img-fluid h-75" loading="lazy" style="position: relative; z-index: 20;" :src="logos[1]"  alt="Figma">
         </div>
         <div class="col-7 text-start">
           <div class="row">
@@ -23,7 +23,7 @@
               <h2 class="normal-text">{{$t("conocimientos_figma")}}</h2>
             </div>
           </div>
-          <div class="row pt-4">
+          <div class="row pt-4 seccion-conocimiento">
             <div class="col-4">
               <div class="conocimientos-image figma-designs figma_programacion" alt="Figma"><a class="d-block h-100 w-100" href="https://www.figma.com/file/n8qyQ6TnOY0ZPkN5ty44KS/Portfolio-Informatica?type=design&node-id=420%3A119&mode=design&t=xXkodN9yreCtNxol-1" target="_blank" ></a></div>
             </div>
@@ -39,22 +39,22 @@
       </div>
     </template>
     <template v-if="optionSelectedComputed == 2">
-        <div class="row pt-4">
+        <div class="row pt-4 seccion-conocimiento">
             <div class="col-1"></div>
-            <div class="col-xl-3 col-lg-3 col-sm-12 w-sm-50 d-flex flex-sm-column align-items-lg-start align-items-sm-center">
-                <img class="conocimientos-image" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[2]"  alt="Figma">
+            <div class="col-xl-3 col-lg-3 col-sm-10 w-sm-50 d-flex flex-sm-column align-items-lg-start align-items-sm-center pb-md-4 pb-lg-0">
+                <img class="conocimientos-image w-100 h-auto" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[2]"  alt="Figma">
             </div>
             <div class="col-lg-7 d-md-block d-sm-none text-md-start">
                 <h2 class="normal-text text-lg-start text-sm-center">{{$t("conocimientos_javascript")}}</h2>
             </div>
             <div class="col-1"></div>
-        <div class="row pt-4">
+        <div class="row pt-4 seccion-conocimiento">
             <div class="col-1"></div>
-            <div class="col-md-4 text-start d-flex justify-content-sm-center justify-content-lg-start">
+            <div class="col-lg-6 col-md-6 col-xl-4 text-start d-flex justify-content-sm-center justify-content-lg-start">
               <JuegoJavascript></JuegoJavascript>
             </div>
             <div class="col-1 d-md-none d-sm-block"></div>
-            <div class="col-md-6 col-sm-10 mt-sm-4 mt-md-0 text-start d-flex flex-sm-column justify-content-sm-center justify-content-lg-start background_programacion_gris">
+            <div class="col-lg-4 col-md-4 col-xl-6 mt-sm-4 mt-md-0 text-start d-flex flex-sm-column justify-content-sm-center justify-content-lg-start background_programacion_gris">
               <div class="row p-4 dialogo-javascript"><p class="font-regular text-white text-lg-start text-sm-center h3">{{$t("conocimientos_javascript")}}</p></div>
             </div>
             <div class="col-sm-1 col-md-0"></div>
@@ -63,48 +63,52 @@
       </div>
     </template>
     <template v-if="optionSelectedComputed == 3">
-      <div class="row pt-4">
+      <div class="row pt-4 seccion-conocimiento">
         <div class="col-1"></div>
-        <div class="col-xl-3 col-lg-3 col-sm-12 w-sm-50 d-flex flex-sm-column align-items-lg-start align-items-sm-center">
-          <img class="conocimientos-image" loading="lazy" :src="logos[3]"  alt="Figma">
+        <div class="col-xl-3 col-lg-3 col-sm-12 w-sm-50 d-flex flex-sm-column align-items-lg-start align-items-sm-center pb-md-4 pb-lg-0">
+          <img class="conocimientos-image w-100 h-auto" loading="lazy" :src="logos[3]"  alt="CSS Imagen">
         </div>
         <div class="col-lg-7 d-md-block d-sm-none text-md-start">
           <div class="row"><h2 class="normal-text text-lg-start text-sm-center">{{$t("conocimientos_css")}}</h2></div>
-          <div class="row h-100 w-100">
+          <div class="row h-100 w-100 px-lg-4 px-xl-0">
             <JuegoCss></JuegoCss>
           </div>
         </div>
         <div class="col-1"></div>
       </div>
     </template>
+    <!-- bootstrap -->
     <template v-if="optionSelectedComputed == 4">
-      <div class="row pt-4">
+      <div class="row pt-4 seccion-conocimiento">
         <div class="col-1"></div>
         <div class="col-3">
-          <img class="conocimientos-image" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[4]"  alt="Vue">
+          <img class="conocimientos-image img-fluid h-75" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[4]"  alt="Vue">
         </div>
         <div class="col-7 text-start">
-          <h2 class="normal-text">{{$t("conocimientos_bootstrap")}}</h2>
+          <h2 class="normal-text" style="font-size: 2.5vw;">{{$t("conocimientos_bootstrap")}}</h2>
         </div>
         <div class="col-1"></div>
       </div>
     </template>
-    <!-- bootstrap -->
     <template v-if="optionSelectedComputed == 5">
-      <div class="row pt-4">
+      <div class="row">
         <div class="col-1"></div>
-        <div class="col-3">
-          <img class="conocimientos-image" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[4]"  alt="Vue">
+        <div class="col-10">
+          <img class="h-100 w-auto" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[5]"  alt="Vue">
         </div>
-        <div class="col-7 text-start">
-          <h2 class="normal-text">{{$t("conocimientos_bootstrap")}}</h2>
+        <div class="col-1"></div>
+      </div>
+      <div class="row pt-2">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <TextoAnimado :text="$t('conocimientos_gsap')" font-size="3vw"></TextoAnimado>
         </div>
         <div class="col-1"></div>
       </div>
     </template>
     <!-- SCSS -->
     <template v-if="optionSelectedComputed == 6">
-      <div class="row pt-4">
+      <div class="row pt-4 seccion-conocimiento">
         <div class="col" style="position: relative; height: 50vh;">
           <section class="container-scss">
             <h1 style="display: none;" id="boton">
@@ -119,8 +123,8 @@
     </template>
     <!-- Spline  -->
     <div v-show="optionSelectedComputed == 7">
-      <div class="row pt-4">
-        <div class="col" style="position: relative; height: 872px;">
+      <div class="row pt-4 seccion-conocimiento">
+        <div class="col d-flex justify-content-center position-relative" style="height: 872px;">
           <!-- <h2 class="introduction_title_programacion" style="position: absolute; top: 0px; left: 0px;">SPLINE PERMITE HACER COSAS COMO ESTAS</h2> -->
           <div class="box medium">
             <a href="https://spline.design/" target="_blank" class="glitch">{{$t("conocimientos_spline")}}</a>
@@ -131,10 +135,10 @@
     </div>
     <!-- Node  -->
     <template v-if="optionSelectedComputed == 8">
-      <div class="row pt-4">
+      <div class="row pt-4 seccion-conocimiento">
         <div class="col-1"></div>
         <div class="col-3">
-          <img class="conocimientos-image" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[8]"  alt="Vue">
+          <img class="conocimientos-image img-fluid h-75" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[8]"  alt="Vue">
         </div>
         <div class="col-7 text-start">
           <h2 class="normal-text">{{$t("conocimientos_node")}}</h2>
@@ -143,13 +147,13 @@
       </div>
     </template>
     <template v-if="optionSelectedComputed == 9">
-      <div class="row pt-4">
+      <div class="row pt-4 seccion-conocimiento">
         <div class="col-1"></div>
         <div class="col-3">
-          <img class="conocimientos-image" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[9]"  alt="Vue">
+          <img class="conocimientos-image img-fluid h-75" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[9]"  alt="Vue">
         </div>
         <div class="col-7 text-start">
-          <h2 class="normal-text">{{$t("conocimientos_react")}}</h2>
+          <h2 class="normal-text pt-4" style="font-size: 2.5vw;">{{$t("conocimientos_react")}}</h2>
         </div>
         <div class="col-1"></div>
       </div>
@@ -158,6 +162,7 @@
    
   <script setup>
     import JuegoJavascript from "./JuegoJavascript.vue";
+    import TextoAnimado from "./TextoAnimado.vue";
     import JuegoCss from "./JuegoCss.vue";
 
     import { onMounted, nextTick, watch, ref, computed } from "vue";
@@ -248,11 +253,10 @@
   font-family: "Mona Sans SemiBold Wide";
 }
 #container {
-  position: absolute;
-  top: 0px;
-  left: 30%;
   width: 772px;
   height: 872px;
+  top: 0;
+  position: absolute;
 }
 .texto-scss{
   color: #fff;
@@ -269,7 +273,7 @@
   float: left;
   left: 50%;
   position: relative;
-  font-size: 6.5rem;;
+  font-size: 6vw;
   span {
     transform: skew(-2deg);
     display: block;
@@ -286,7 +290,7 @@ button{
 		margin: 7px;
 		border: 0.1px solid #e55643;
 		padding: 5px;
-		font-size: 4rem;
+		font-size: 4vw;
     border: 3px solid #d34296;
     text-shadow: #d34296 1px 1px, #d34296 2px 2px, #d34296 3px 3px, #d34296 4px 4px, #d34296 5px 5px, #d34296 6px 6px;
 		background: linear-gradient(
@@ -350,6 +354,8 @@ button:active{
   width: 100%;
   position: relative;
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .glitch {
@@ -402,7 +408,7 @@ button:active{
       content: 'SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE SPLINE ';
     }
     &:after {
-      color: #C487C2;
+      color: #df4924;
     }
     &:before {
       color: #00FF02;
@@ -423,16 +429,16 @@ button:active{
         transform: translate(0)
     }
     20% {
-        transform: translate(-4px, 4px)
+        transform: translate(-6px, 6px)
     }
     40% {
-        transform: translate(-4px, -4px)
+        transform: translate(-6px, -6px)
     }
     60% {
-        transform: translate(4px, 4px)
+        transform: translate(6px, 6px)
     }
     80% {
-        transform: translate(4px, -4px)
+        transform: translate(6px, -6px)
     }
     to {
         transform: translate(0)
@@ -443,10 +449,10 @@ button:active{
         transform: translate(0)
     }
     33% {
-        transform: translate(-7px, 5px)
+        transform: translate(-8px, 9px)
     }
     66% {
-        transform: translate(7px, -5px)
+        transform: translate(8px, -9px)
     }
     to {
         transform: translate(0)
@@ -457,10 +463,10 @@ button:active{
         transform: translate(0)
     }
     33% {
-        transform: translate(-7px, -5px)
+        transform: translate(-8px, -9px)
     }
     66% {
-        transform: translate(7px, 6px)
+        transform: translate(8px, 9px)
     }
     to {
         transform: translate(0)

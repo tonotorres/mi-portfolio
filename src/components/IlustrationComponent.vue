@@ -1,8 +1,21 @@
 <template>
-  <div>
+  <div class="ilustracion_fondo">
     <canvas ref="fondoPintura" id="fondoPintura"></canvas>
-      <div class="app-noise noise loaded" data-v-ca1bafaa="" style="opacity: 0.1;"></div>
-      <img :src="require('../assets/images/programacion/legalspain.webp')" alt="">
+    <h2 class="title_dentro_hab" style="position: absolute; top: 50%;filter: blur(509px);text-align: center; font-size: 10vw; z-index: 3;">Hola que tal</h2>
+    <div class="app-noise noise loaded" data-v-ca1bafaa="" style="opacity: 0.1;"></div>
+    <div class="row position-relative" style="height: 200vh; pointer-events: none;">
+      <div class="introduccion_ilustracion row text-center justify-content-center"><h2 class="color-white " style="font-size: 10vw">Hola haz scroll hacia abajo</h2> </div>
+      <div class="hab_primer_plano" ></div>
+      <div class="hab_segundo_plano" ></div>
+    </div>
+    <div class="row" id="apreciar-habitacion" style="height: 100vh; pointer-events: none;">
+      <div class="col d-flex justify-content-center position-relative"></div>
+    </div>
+    <div class="row" id="entrada-habitacion" style="height: 200vh; pointer-events: none;"></div>
+    <div class="row" id="entrada-ventana" style="height: 300vh; position: relative; pointer-events: none;">
+      <h2 class="position-absolute" style="bottom: 300vh; left: 0; color: white; z-index: 2; font-size: 10vw; pointer-events: none;"><span>Bienvenido a mi web de arte</span></h2>
+    </div>
+    <div class="row position-relative" style="height: 200vh; pointer-events: none;"></div>
     </div>
     
   </template>
@@ -12,59 +25,154 @@ import { ref, onMounted } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import WebGLFluid from 'webgl-fluid';
+import Lenis from '@studio-freight/lenis'
 
 gsap.registerPlugin(ScrollTrigger);
 
 
+const lenis = ref(null);
 
     const fondoPintura = ref();
+    // Function to initialize Lenis for smooth scrolling
+ const initSmoothScrolling = () => {
+    // Instantiate the Lenis object with specified properties
+    lenis.value = new Lenis({
+      duration: 1.3, // Lower values create a smoother scroll effect
+      // lerp: 0.1, // Aumenta el valor de lerp
+      smoothWheel: true,
+      easing: (t) => t * (2 - t),
+      // content: scrollClass
+    });
     
 
-    function animarGranulado() {
-      const granulado = document.getElementById("granulado");
-      const x = Math.floor(Math.random() * window.innerWidth);
-      const y = Math.floor(Math.random() * window.innerHeight);
-      granulado.style.backgroundPosition = `${x}px ${y}px`;
+    // Update ScrollTrigger each time the user scrolls
+    lenis.value.on('scroll', () => ScrollTrigger.update());
+    
+    // gsap.ticker.add((time)=>{
+    //     lenis.value.raf(time * 1000)
+    //   })
 
-      requestAnimationFrame(animarGranulado);
-    }
+    // gsap.ticker.lagSmoothing(0)
+
+    // Define a function to run at each animation frame
+    const scrollFn = (time) => {
+      lenis.value.raf(time)
+      requestAnimationFrame(scrollFn); // Recursively call scrollFn on each frame
+    };
+    // Start the animation frame loop
+    requestAnimationFrame(scrollFn);
+  };
     onMounted(() => {
-        // animarGranulado();
-        console.log(fondoPintura.value)
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".introduccion_ilustracion",
+          start: "center top",
+          end: "bottom center",
+          scrub: true,
+        }
+      });
+      let tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#apreciar-habitacion",
+          start: "-100% top",
+          end: "bottom top",
+          scrub: true,
+          // markers: true,
+          onEnter: () => {
+            gsap
+            .to(".hab_segundo_plano, .hab_primer_plano", { 
+              position: "fixed", 
+              top: 0,
+              duration: 0, // Hace que la animación sea instantánea
+            }) 
+          },
+          onLeave: () => {
+            gsap
+            .to(".hab_segundo_plano, .hab_primer_plano", { 
+              clearProps: "all",
+              duration: 0, // Hace que la animación sea instantánea
+            }) 
+          },
+          onLeaveBack: () => {
+            gsap.to(".hab_segundo_plano, .hab_primer_plano", { 
+              clearProps: "all",
+              duration: 0, // Hace que la animación sea instantánea
+            });
+          }
+        }
+      });
+      gsap.to(".title_dentro_hab", { 
+        blur: 0,
+        xPercent: 100,
+        scrollTrigger: {
+          trigger: "#apreciar-habitacion",
+          start: "-100% top",
+          end: "bottom center",
+          scrub: true,
+        }
+      });
+      gsap.to(".hab_primer_plano", { 
+        scale: 1.3, // Cambia este valor al deseado
+        yPercent: -100, 
+        scrollTrigger: {
+          trigger: "#entrada-habitacion",
+          start: "-50% top",
+          end: "bottom center",
+          scrub: true,
+        }
+      });
+
+      gsap.to(".hab_segundo_plano", { 
+        scale: 1.1, // Cambia este valor al deseado
+        yPercent: -100,
+        scrollTrigger: {
+          trigger: "#entrada-habitacion",
+          start: "-50% top",
+          end: "200% center",
+          scrub: true,
+          onLeave: () => {
+            // gsap.to(".hab_segundo_plano, .hab_primer_plano", { 
+
+            // });
+          },
+          onLeaveBack: () => {
+            // gsap.to(".hab_segundo_plano, .hab_primer_plano", { 
+
+            // });
+          },
+        }
+      });
         WebGLFluid(fondoPintura.value, {
-          TRANSPARENT: false,
-          IMMEDIATE: false,
-          TRIGGER: 'hover',
+          IMMEDIATE: false, // Whether to trigger multiple random splats when initialized
+          TRIGGER: 'hover', // Can be change to 'click'
           SIM_RESOLUTION: 128,
           DYE_RESOLUTION: 1024,
           CAPTURE_RESOLUTION: 512,
-          DENSITY_DISSIPATION: 3,
-          VELOCITY_DISSIPATION: 15,
-          PRESSURE: 0.88,
+          DENSITY_DISSIPATION: 1,
+          VELOCITY_DISSIPATION: 3.9,
+          PRESSURE: 0.8,
           PRESSURE_ITERATIONS: 20,
-          CURL: 30,
-          SPLAT_RADIUS: 0.85,
-          SPLAT_FORCE: 13000,
+          CURL: 1,
+          SPLAT_RADIUS: 0.75,
+          SPLAT_FORCE: 30000,
           SHADING: true,
-          COLORFUL: '#f33333',
-          COLOR_UPDATE_SPEED: 5,
+          COLORFUL: true,
+          COLOR_UPDATE_SPEED: 20,
           PAUSED: false,
-          BACK_COLOR: {
-            r: 0,
-            g: 0,
-            b: 0
-          },
+          BACK_COLOR: { r: 0, g: 0, b: 0 },
+          TRANSPARENT: false,
           BLOOM: true,
-          BLOOM_ITERATIONS: 8,
+          BLOOM_ITERATIONS: 2,
           BLOOM_RESOLUTION: 256,
-          BLOOM_INTENSITY: 0.02,
-          BLOOM_THRESHOLD: 0.2,
-          BLOOM_SOFT_KNEE: 0.2,
+          BLOOM_INTENSITY: 0.1,
+          BLOOM_THRESHOLD: 0.1,
+          BLOOM_SOFT_KNEE: 0.7,
           SUNRAYS: true,
           SUNRAYS_RESOLUTION: 196,
-          SUNRAYS_WEIGHT: 0.35
+          SUNRAYS_WEIGHT: 0.3,
         });
 
+        initSmoothScrolling();
 
 
   });
@@ -72,14 +180,44 @@ gsap.registerPlugin(ScrollTrigger);
 </script>
     
     <style scoped lang="scss">
-
-section {
-  position: relative;
+@font-face {
+  font-family: "Cartoon";
+  src: url("../assets/fonts/ilustracion_title.otf") format("truetype");
+  font-display: swap;
+}
+.ilustracion_fondo {
+  background-color: black;
+}
+.hab_primer_plano {
   height: 100vh;
   width: 100%;
-  background: #000;
-  display: grid;
-  place-content: center;
+  position: absolute;
+  top: 100vh;
+  left: 0%;
+  background: url('../assets/images/ilustracion/plano-1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 3;
+  pointer-events: none;
+}
+.hab_segundo_plano {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 100vh;
+  left: 0%;
+  background: url('../assets/images/ilustracion/plano-2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+.introduccion_ilustracion {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  z-index: 2;
 }
 .noise.loaded {
     -webkit-animation: noise 1.2s steps(3) infinite both;
@@ -132,42 +270,51 @@ section {
     transform: translate3d(0,8%,0);
 }
 }
-h1 {
+h2 {
   color: #fff;
-  z-index: 5;
-  mix-blend-mode: difference;
-  text-transform: uppercase;
-  font-size: 100px;
-  line-height: 1;
-  padding-top: 20px;
+  font-family: "Cartoon";
+  span {
+    letter-spacing: 0;
+    padding: .25em 0 .325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255,255,255,.5);
+
+    /* Clip Background Image */
+
+    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* Animate Background Image */
+
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 80s linear infinite;
+
+    /* Activate hardware acceleration for smoother animations */
+
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+
+    }
 }
 
-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  clip-path: circle(0%);
+/* Animate Background Image */
+
+@-webkit-keyframes aitf {
+0% { background-position: 0% 50%; }
+100% { background-position: 100% 50%; }
+
 }
-#granulado {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 9999;
-  pointer-events: none;
-  background-color: rgba(255, 255, 255, 0.1);
-  filter: contrast(0) brightness(1000%) sepia(100%) grayscale(100%) invert(100%);
-}
+
 canvas {
-  width: 100%;
-  height: 100%;
   position: fixed;
   inset: 0;
   z-index: 0;
   // background-image: url("../assets/images/programacion/netlu.png");
+}
+#fondoPintura {
+  height: 100vh;
+  width: 100vw;
 }
   </style>

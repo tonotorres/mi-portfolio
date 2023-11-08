@@ -33,12 +33,10 @@ export class TextLinesReveal {
         gsap.killTweensOf(this.lines);
         return gsap.timeline({defaults: {duration: 1.2, ease: 'expo'}})
         .set(this.lines, {
-            y: '150%',
-            rotate: 15
+            transform: 'translateY(150%) rotate(15deg)'
         })
         .to(this.lines, {
-            y: '0%',
-            rotate: 0,
+            transform: 'translateY(0%) rotate(0deg)',
             stagger: 0.04
         });
     }
@@ -52,8 +50,7 @@ export class TextLinesReveal {
             defaults: {duration: 0.5, ease: 'expo.in'}
         })
         .to(this.lines, {
-            y: '-150%',
-            rotate: -5,
+            transform: 'translateY(-150%) rotate(-5deg)',
             stagger: 0.02
         });
     }

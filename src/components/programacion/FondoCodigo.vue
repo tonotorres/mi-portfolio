@@ -248,7 +248,6 @@ onMounted(() => {
 
 #codeBackground{
 	height:100%;
-	height:100vh;
 	/* margin:auto; */
 	width:100%;
   position: absolute;

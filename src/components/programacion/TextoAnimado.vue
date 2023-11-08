@@ -77,11 +77,9 @@
             ease: 'none',
             scrollTrigger: {
               trigger: target,
-              markers: false,
               scrub: 1,
-              start: 'top center',
-              end: 'bottom center',
-              once: true
+              start: '-20% 60%',
+              end: 'bottom bottom',
             },
           });
         });
@@ -98,8 +96,7 @@
   <style scoped>
   
 .text { 
-    /* background-color: rgba(0,0,0,1); */
-    /* padding-top: 5%; */
+    font-family: "Mona Sans Regular";
 }
   .text > p > .line {
     

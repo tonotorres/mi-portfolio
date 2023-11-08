@@ -22,25 +22,21 @@
           </div>
           <div class="col-0"></div>
         </section>
-        <section class="row formulario-fondo">
-          <div class="row w-100" style="height: 20vh;"></div>
-          <div class="row w-100">
-            <div class="col d-flex justify-content-center"><h1 class="section_title_programacion color-white">{{$t("formulario_titulo")}}</h1></div>
+        <div>
+      </div>
+      <section class="row formulario-fondo">
+          <div class="row w-100 separacion_secciones_programacion"></div>
+          <div class="row w-100 mx-0 px-0 mx-sm-auto px-sm-auto">
+            <div class="col d-flex justify-content-center"><h1 class="section_title_programacion text-shadow-title_programacion color-white mx-0 px-0 mx-sm-auto px-sm-auto">{{$t("formulario_titulo")}}</h1></div>
         </div>
-        <div class="row w-100 ">
-          <div class="col-1"></div>
-          <div class="col-10">
+        <div class="row w-100 mx-0 px-0 mx-sm-auto px-sm-auto">
+          <div class="col-sm-1 d-sm-block d-none"></div>
+          <div class="col-sm-10 col-12">
             <FormularioContacto></FormularioContacto>
           </div>
-          <div class="col-1"></div>
+          <div class="col-sm-1 d-sm-block d-none"></div>
         </div>
         </section>
-        <!-- <NetluProgram :loadedLine="loadedLine" @loaded2="loadedLine2 = true"></NetluProgram> -->
-        <!-- <AmuraProgram :loadedLine2="loadedLine2"></AmuraProgram>
-        <SatecProgram></SatecProgram> -->
-        <div>
-          <!-- <MorePorjectsProgram></MorePorjectsProgram> -->
-        </div>
     </div>
     
     <Socials></Socials>
@@ -65,8 +61,7 @@ import { ref, onMounted, onBeforeMount, nextTick, computed  } from 'vue';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const loadedLine = ref(false);
-const loadedLine2 = ref(false);
+
 const lenis = ref(null);
 var isTouchDevice = true;
 const isNotTouchDevice = computed(() => !isTouchDevice);
@@ -123,27 +118,26 @@ gsap.registerPlugin(ScrollTrigger);
     }
     initSmoothScrolling();
   }
-  gsap.to(".empleos", {
-  scrollTrigger: {
-    trigger: "#conocimientos",
-    markers: true,
-    start: "top center", // Ajusta esto según dónde quieras que se active el cambio
-    onEnter: function() {
-      gsap.to(".empleos", {
-        backgroundImage: "radial-gradient(rgb(5, 5, 5) 14px, white 9px)",
-        backgroundSize: "20px 20px",
-        duration: 1 // Ajusta la duración de la transición según tus necesidades
-      });
-    },
-    onLeaveBack: function() {
-      gsap.to(".empleos", {
-        backgroundImage: "radial-gradient(hsla(0,0%,58%,.3) 1px,transparent 0)",
-        backgroundSize: "20px 20px",
-        duration: 1 // Ajusta la duración de la transición según tus necesidades
-      });
-    }
-  }
-});
+//   gsap.to(".empleos", {
+//   scrollTrigger: {
+//     trigger: "#conocimientos",
+//     start: "top center", // Ajusta esto según dónde quieras que se active el cambio
+//     onEnter: function() {
+//       gsap.to(".empleos", {
+//         backgroundImage: "radial-gradient(rgb(5, 5, 5) 14px, white 9px)",
+//         backgroundSize: "20px 20px",
+//         duration: 1 // Ajusta la duración de la transición según tus necesidades
+//       });
+//     },
+//     onLeaveBack: function() {
+//       gsap.to(".empleos", {
+//         backgroundImage: "radial-gradient(hsla(0,0%,58%,.3) 1px,transparent 0)",
+//         backgroundSize: "20px 20px",
+//         duration: 1 // Ajusta la duración de la transición según tus necesidades
+//       });
+//     }
+//   }
+// });
   
 });
 
@@ -151,36 +145,23 @@ gsap.registerPlugin(ScrollTrigger);
 </script>
 
 <style scoped>
-body {
-    
-}
+
 #code{
 	height:100%;
-	/* height:100vh; */
-	/* margin:auto; */
 	width:100%;
   position: relative;
   background-color: rgb(0,0,0);
-
   max-width: 100%;
   overflow: hidden;
 
-}
-.webpage {
-  height: 100vh;
-  width: 100%;
-  /* background-color: rgba(0,0,0,1); */
-  text-align: center;
-  position: relative;
-  z-index: 15;
 }
 
 .empleos {
   position: relative;
   z-index: 30;
   height: 100%;
-  background-image:  radial-gradient(hsla(0,0%,58%,.3) 1px,transparent 0);
-  background-size: 20px 20px;
+  /* background-image:  radial-gradient(hsla(0,0%,58%,.3) 1px,transparent 0);
+  background-size: 20px 20px; */
 }
 
 
@@ -225,23 +206,11 @@ body {
   z-index: 2;
   backdrop-filter: blur(12vmax);
 }
-.dot-finish {
-  position: absolute;
-  top: -10%;
-  left: 39.8%;
-  z-index: 40;
-}
+
 .formulario-fondo {
   background: rgb(2,0,36);
 background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgb(29, 5, 116) 20%, rgb(90, 116, 231) 65%, #050505 100%);
 }
-@media screen and (max-height: 715px) {
-  .dot-finish {
-    position: absolute;
-    top: 44%;
-    left: 39.99%;
-    z-index: 40;
-  }
-}
+
 
 </style>

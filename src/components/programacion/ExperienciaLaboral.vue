@@ -53,7 +53,7 @@
     </dialog>  
 
     <!-- Sección -->
-    <div class="row" style="height: 20vh;"></div>
+    <div class="row separacion_secciones_programacion"></div>
     <div class="row ">
       <div class="col text-center"><h2 class="section_title_programacion">{{$t("experiencia_titulo")}}</h2></div>
     </div>

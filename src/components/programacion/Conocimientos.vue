@@ -5,16 +5,16 @@
     </div>
     <div class="row" style="height: 5vh;"></div>
     <div class="row ">
-      <div class="col-12" style="position: relative; height: 20vh;">
+      <div class="col-12" style="position: relative; height: 250px;">
         <div class="carousel-conocimientos">
           <div class="boxes"></div>
         </div>
         <div class="viewport"></div>
       </div>	
     </div>
-    <div class="row" style="height: 10vh;"></div>
-      <SeccionConocimientos :optionSelected="optionSelectedComputed"></SeccionConocimientos>
-    <div class="row" style="height: 20vh;"></div>
+    <div class="row d-none d-sm-flex" style="height: 10vh;"></div>
+    <SeccionConocimientos v-if="isLargeScreen" :optionSelected="optionSelectedComputed"></SeccionConocimientos>
+    <div class="row separacion_secciones_programacion"></div>
   </template>
    
   <script setup>
@@ -57,7 +57,7 @@
 
     var imgWidth  = null
     var imgHeight = null
-
+    var viewWidth = null;
     var wrapWidth = null
     var wrapVal = null
     var wrapProgress = null
@@ -71,7 +71,7 @@
     const optionSelectedComputed = computed(() => {
       return optionSelected.value
     })
-
+    const isLargeScreen = computed(() => window.innerWidth >= 950);
     function selectOption(index) {
       optionSelected.value = index
       console.log(optionSelectedComputed.value)
@@ -79,12 +79,12 @@
     
 
     function updateProgress() {
-      let newDirection = "to-" + this.getDirection(); // "to-left" | "to-right"
-      if(direction != newDirection){
-        let currentTimeScale = animation.timeScale();
-        let newTimeScale = currentTimeScale * -1;
-        animation.timeScale(newTimeScale);
-      }
+      // let newDirection = "to-" + this.getDirection(); // "to-left" | "to-right"
+      // if(direction != newDirection){
+      //   let currentTimeScale = animation.timeScale();
+      //   let newTimeScale = currentTimeScale * -1;
+      //   animation.timeScale(newTimeScale);
+      // }
       const dragValue = (wrapVal(this.deltaX * directionVal) / wrapWidth);
       const currentProgressAnim = animation.progress();
       const endProgress = wrapProgress(currentProgressAnim + dragValue);
@@ -109,7 +109,7 @@
 
     imgWidth  = boxWidth  - 6;
     imgHeight = boxHeight - 14;
-    let viewWidth = window.innerWidth;
+    viewWidth = window.innerWidth;
     wrapWidth = numBoxes * boxWidth;
     wrapVal = gsap.utils.wrap(0, wrapWidth);
     wrapProgress = gsap.utils.wrap(0, 1);

@@ -8,7 +8,7 @@
           <div class="col-md-7 col-sm-12" style="padding-left: 3vw;">
               <div class="row pt-0">
                 <div class="col pl-4">
-                    <div class="row pb-1"><div class="col"><h2 class="introduction_title_programacion text-md-start text-sm-center" v-html="scrambledTitle"></h2></div></div>
+                    <div class="row pb-1 mt-2 mt-sm-0"><div class="col"><h2 class="introduction_title_programacion text-md-start text-sm-center" v-html="scrambledTitle"></h2></div></div>
                     <div class="row pb-1"><div class="col"><h4 class="introduction_sub-title_programacion text-md-start text-sm-center" v-html="scrambledSubTitle"></h4></div></div>
                     <div class="row"><div class="col"><p class="normal-text text-md-start text-sm-center">{{$t("introduccion_texto")}}{{$t("introduccion_texto_2")}}</p></div></div>
                     <div class="row">
@@ -85,8 +85,8 @@
   .introduccion {
     position: relative;
     z-index: 10;
-    background-image:  radial-gradient(hsla(0,0%,58%,.3) 1px,transparent 0);
-    background-size: 20px 20px;
+    /* background-image:  radial-gradient(hsla(0,0%,58%,.3) 1px,transparent 0);
+    background-size: 20px 20px; */
   }
 
 

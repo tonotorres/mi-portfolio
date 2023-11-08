@@ -78,11 +78,17 @@
     font-size: 1.8vw;
     font-weight: 500;
   }
-
+  .texto_formulario {
+    font-size: 2vw;
+    font-family: "Mona Sans SemiBold Wide";
+  }
   .section_title_programacion {
     color: #3284ff;
     font-size: 7vw;
     font-family: "Mona Sans Bold Wide";
+  }
+  .text-shadow-title_programacion {
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #3284ff;
   }
   .section_subtitle_programacion {
     color: #000000;
@@ -108,9 +114,9 @@
   }
 /* Imagenes */
 .conocimientos-image {
-  height: 47vh;
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
+  width: 100;
+  /* aspect-ratio: 1 / 1; */
 }
 .figma-designs {
   height: 30vh;
@@ -126,6 +132,14 @@
 .figma-designs:hover {
   background-size: 140%; /* Zoom de 140% */
 }
+
+/* Tamaños */
+.seccion-conocimiento {
+  min-height: 50vh;
+}
+.separacion_secciones_programacion {
+  height: 20vh;
+}
 @media (max-width: 1500px) {
   .normal-text { 
     font-family: "Mona Sans Regular";
@@ -137,12 +151,13 @@
 }
 @media screen and (min-width: 201px) and (max-width: 993px) {
   .conocimientos-image {
-    height: 47vh;
-    width: 50%;
     aspect-ratio: 1 / 1;
   }
 }
 @media screen and (max-width: 767px) {
+  .separacion_secciones_programacion {
+    height: 10vh;
+  }
   .introduction_title_programacion {
     font-family: "Mona Sans Bold Wide";
     color: #FFFFFF;
@@ -153,7 +168,9 @@
     color: #FFFFFF;
     font-size: 4.5vw;
   }
-
+  .texto_formulario {
+    font-size: 3vw;
+  }
   .normal-text { 
     font-family: "Mona Sans Regular";
     color: #FFFFFF;

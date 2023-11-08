@@ -1,27 +1,24 @@
 <!-- Please remove this file from your project -->
 <template>
   <div>
-    <!-- <div id="contacto"></div> -->
-    
-    <div class="main-contact-form mt-xl-5" id="contact-form">
-        
-        <div class="row w-100 formulario">
-            <div class="col d-flex justify-content-center fondo-formulario">
-              <form action="https://formsubmit.co/14e8d4395561ad85301f9b2c181558b3" method="POST">
+    <div class="mt-xl-5">   
+      <div class="row w-100 formulario">
+            <div class="col d-flex justify-content-center fondo-formulario p-2">
+              <form class="p-4" action="https://formsubmit.co/14e8d4395561ad85301f9b2c181558b3" method="POST">
                 <div class="form-row pt-4 pb-4 d-flex">
                   <div class="form-group col-md-4 text-start" style="padding-right: 2%;">
-                    <label class="section_subtitle_programacion color-white" for="inputEmail">{{$t("formulario_email")}}</label>
+                    <label class="texto_formulario color-white" for="inputEmail">{{$t("formulario_email")}}</label>
                     <input type="email" class="form-control" id="inputEmail"  name="email" placeholder="Email">
                   </div>
                   <div class="form-group col-md-4 text-start" style="padding-right: 2%;">
-                    <label class="section_subtitle_programacion color-white " for="inputPhone">{{$t("formulario_telefono")}}</label>
+                    <label class="texto_formulario color-white " for="inputPhone">{{$t("formulario_telefono")}}</label>
                     <input type="text" class="form-control" name="phone" id="inputPhone" placeholder="Telefono" onkeypress="return event.charCode >= 48 && event.charCode <= 57"  v-model="telefono">
                   </div>
                   <div class="form-group col-md-4 text-start"></div>
                   
                 </div>
                 <div class="form-group col-12 text-start">
-                  <label class="section_subtitle_programacion color-white" for="inputMessage">{{$t("formulario_mensaje")}}</label>
+                  <label class="texto_formulario color-white" for="inputMessage">{{$t("formulario_mensaje")}}</label>
                   <textarea class="form-control" id="inputMessage"  name="comments" v-model="mensaje"></textarea>
                 </div>
                 <div class="form-group col-12 my-4 text-center">
@@ -79,12 +76,10 @@
   border-radius: 25px 25px 0px 0px;
   color: white;
   font-family: "Mona Sans Regular";
-  font-size: 2em;
   border: 1px solid white;
-  margin: 0px;
 }
 form {
-  width: 90%;
+  width: 100%;
 }
 textarea {
   height: 10rem;
@@ -95,7 +90,7 @@ textarea {
   color: #fff;
   border-radius: 5px;
   font-weight: 500;
-  font-size: 0.75em;
+  font-size: 1vw;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -156,6 +151,9 @@ background-image: linear-gradient(315deg, rgba(0, 162, 255, 0.856) 0%, rgba(0, 1
   .title {
     font-size: 3.5rem;
     margin-top: 10%;
+  }
+  .custom-btn {
+    font-size: 3vw;
   }
 }
 @media only screen and (max-width: 485px) {
