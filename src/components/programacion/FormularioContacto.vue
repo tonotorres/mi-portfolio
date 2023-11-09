@@ -1,14 +1,13 @@
-<!-- Please remove this file from your project -->
 <template>
   <div>
     <div class="mt-xl-5">   
       <div class="row w-100 formulario">
             <div class="col d-flex justify-content-center fondo-formulario p-2">
-              <form class="p-4" action="https://formsubmit.co/14e8d4395561ad85301f9b2c181558b3" method="POST">
+              <form class="p-4" ref="form" @submit.prevent="sendEmail">
                 <div class="form-row pt-4 pb-4 d-flex">
                   <div class="form-group col-md-4 text-start" style="padding-right: 2%;">
                     <label class="texto_formulario color-white" for="inputEmail">{{$t("formulario_email")}}</label>
-                    <input type="email" class="form-control" id="inputEmail"  name="email" placeholder="Email">
+                    <input type="email" class="form-control" id="inputEmail"  name="email" placeholder="Email" v-model="email">
                   </div>
                   <div class="form-group col-md-4 text-start" style="padding-right: 2%;">
                     <label class="texto_formulario color-white " for="inputPhone">{{$t("formulario_telefono")}}</label>
@@ -24,7 +23,7 @@
                 <div class="form-group col-12 my-4 text-center">
                   <button type="submit" class="btn custom-btn btn-13 w-25" aria-label="Enviar">{{$t("formulario_boton")}}</button>
                 </div>
-                <input type="hidden" name="_next" value="http://jlsound.es">
+                <input type="hidden" name="_next" value="https://tonitorresportfolio.com/programacion">
                 <input type="hidden" name="_captcha" value="false">
               </form>
 
@@ -32,9 +31,11 @@
         </div>
     </div>
   </div>
-  </template>
+</template>
   
   <script>
+  import emailjs from '@emailjs/browser';
+
 
   export default {
     name: 'FormularioContacto',
@@ -54,15 +55,13 @@
         this.email = event.target.value;
       },
       async sendEmail(){
-
-        const message = {
-          from: this.email,
-          to: "torrescabero@gmail.com",
-          subject: this.asunto,
-          text: `Nombre: ${this.nombre}\nTeléfono: ${this.telefono}\nEmail: ${this.email}\nMensaje: ${this.mensaje}`
-        };
-    
-        await nodemailer.sendMail(message);
+        console.log(emailjs)
+        emailjs.sendForm('service_tgm4vcm', 'template_qvhg43s', this.$refs.form, 'QpMDusPRtmuAyr3Nw')
+        .then((result) => {
+          console.log('SUCCESS!', result.text);
+        }, (error) => {
+          console.log('FAILED...', error.text);
+        });
       }
     }
   }
