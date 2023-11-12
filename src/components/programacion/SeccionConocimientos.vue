@@ -55,7 +55,7 @@
             </div>
             <div class="col-1 d-md-none d-sm-block"></div>
             <div class="col-lg-4 col-md-4 col-xl-6 mt-sm-4 mt-md-0 text-start d-flex flex-sm-column justify-content-sm-center justify-content-lg-start background_programacion_gris">
-              <div class="row p-4 dialogo-javascript"><p class="font-regular text-white text-lg-start text-sm-center h3">{{$t("conocimientos_javascript")}}</p></div>
+              <div class="row p-4 dialogo-javascript"><p class="font-regular text-white text-lg-start text-sm-center h3" ref="myText"></p></div>
             </div>
             <div class="col-sm-1 col-md-0"></div>
             <div class="col-1 d-md-none d-sm-block"></div>
@@ -189,6 +189,15 @@
       // require('@/assets/images/logos/threejs.png'),
 
     ];
+    var myText = ref(null);
+    var texts = [
+  'let pictures = reactive([\'<i class="fa-brands fa-square-js"></i></span>\',\'<i class="fa-brands fa-figma"></i></span>\',\'<i class="fa-brands fa-css3-alt"></i></span>\',\'<i class="fa-brands fa-vuejs"></i></span>\',\'<i class="fa-brands fa-sass"></i></span>\',\'<i class="fa-brands fa-github"></i></span>\',\'<i class="fa-brands fa-linkedin"></i></span>\',\'<i class="fa-brands fa-react"></i></span>\',\'<i class="fa-solid fa-face-smile"></i></span>\',\'<i class="fa-brands fa-node"></i></span>\',])',
+  'for(var i=0; i&lt;number_of_tiles.value; i++){<br>&emsp;&emsp;&emsp;&emsp;tiles.push(Math.floor(i/2))<br>}',
+  'for(var i=number_of_tiles.value-1; i>0; i--){<br>&emsp;swap = Math.floor(Math.random()*i);<br>&emsp;tmp = tiles[i];<br>&emsp;tiles[i] = tiles[swap];<br>&emsp;tiles[swap] = tmp<br>}',
+  'span v-for="(tile, index) in tiles" :key="index" @click="clicked" :data-type="tile" class="tile_box"',
+];
+    var i = 0;
+
     const props = defineProps({
         optionSelected: {
             type: Number,
@@ -212,12 +221,28 @@
       {ease: Back.easeOut.config(1.7), opacity: 0, bottom: -80},
       {ease: Back.easeOut.config(1.7), opacity: 1, bottom: 0}, 0.05);
     }
-    watch(optionSelectedComputed, (newValue, oldValue) => {
+    function animateText() {
+      gsap.to(myText.value, {opacity: 1, duration: 4, onComplete: function() {
+        gsap.to(myText.value, {opacity: 0, duration: 1, onComplete: function() {
+          i++;
+          if (i === texts.length) {
+            i = 0;
+          }
+          myText.value.innerHTML = texts[i];
+          animateText();
+        }});
+      }});
+    }
+    watch(optionSelectedComputed, async (newValue, oldValue) => {
       if (newValue === 7) {
         const canvas = document.getElementById('container');
         const app = new Application(canvas);
 
         app.load('https://prod.spline.design/TYPY4gxfsCOJ0VCa/scene.splinecode');
+      }else if(newValue === 2) {
+        await nextTick()
+        myText.value.innerHTML = texts[i];
+        animateText();
       }
     });
     onMounted(async () => {

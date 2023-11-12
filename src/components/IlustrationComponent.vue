@@ -3,19 +3,24 @@
     <canvas ref="fondoPintura" id="fondoPintura"></canvas>
     <h2 class="title_dentro_hab" style="position: absolute; top: 50%;filter: blur(509px);text-align: center; font-size: 10vw; z-index: 3;">Hola que tal</h2>
     <div class="app-noise noise loaded" data-v-ca1bafaa="" style="opacity: 0.1;"></div>
-    <div class="row position-relative" style="height: 200vh; pointer-events: none;">
+    <div class="row position-relative" style="height: 100vh; pointer-events: none;">
       <div class="introduccion_ilustracion row text-center justify-content-center"><h2 class="color-white " style="font-size: 10vw">Hola haz scroll hacia abajo</h2> </div>
-      <div class="hab_primer_plano" ></div>
-      <div class="hab_segundo_plano" ></div>
     </div>
-    <div class="row" id="apreciar-habitacion" style="height: 100vh; pointer-events: none;">
-      <div class="col d-flex justify-content-center position-relative"></div>
+    <div class="row" id="apreciar-habitacion" style="height: 200vh; pointer-events: none;">
+      <div class="col d-flex justify-content-center position-relative">
+        <div class="hab_primer_plano" ></div>
+        <div class="hab_segundo_plano" ></div>
+      </div>
     </div>
-    <div class="row" id="entrada-habitacion" style="height: 200vh; pointer-events: none;"></div>
-    <div class="row" id="entrada-ventana" style="height: 300vh; position: relative; pointer-events: none;">
-      <h2 class="position-absolute" style="bottom: 300vh; left: 0; color: white; z-index: 2; font-size: 10vw; pointer-events: none;"><span>Bienvenido a mi web de arte</span></h2>
+    <div class="row" id="entrada_photoshop" style="height: 50vh; pointer-events: none;">
+      <h2 class="position-absolute" style="top: 30%; left: 0; color: white; z-index: 2; font-size: 10vw; pointer-events: none;"><span>Bienvenido a mi web de arte</span></h2>
     </div>
-    <div class="row position-relative" style="height: 200vh; pointer-events: none;"></div>
+    <div class="row" id="entrada_photoshop__seccion" style="height: 100vh; position: relative; pointer-events: none;">
+      <div class="col">
+        <TransicionPhotoshop></TransicionPhotoshop>
+      </div>
+    </div>
+    <div class="row position-relative images-photoshop"></div>
     </div>
     
   </template>
@@ -26,7 +31,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import WebGLFluid from 'webgl-fluid';
 import Lenis from '@studio-freight/lenis'
-
+import TransicionPhotoshop from './TransicionPhotoshop.vue'
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -71,39 +76,39 @@ const lenis = ref(null);
           scrub: true,
         }
       });
-      let tl2 = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#apreciar-habitacion",
-          start: "-100% top",
-          end: "bottom top",
-          scrub: true,
-          // markers: true,
-          onEnter: () => {
-            gsap
-            .to(".hab_segundo_plano, .hab_primer_plano", { 
-              position: "fixed", 
-              top: 0,
-              duration: 0, // Hace que la animación sea instantánea
-            }) 
-          },
-          onLeave: () => {
-            gsap
-            .to(".hab_segundo_plano, .hab_primer_plano", { 
-              clearProps: "all",
-              duration: 0, // Hace que la animación sea instantánea
-            }) 
-          },
-          onLeaveBack: () => {
-            gsap.to(".hab_segundo_plano, .hab_primer_plano", { 
-              clearProps: "all",
-              duration: 0, // Hace que la animación sea instantánea
-            });
-          }
-        }
-      });
+      // let tl2 = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: "#apreciar-habitacion",
+      //     start: "-100% top",
+      //     end: "bottom top",
+      //     scrub: true,
+      //     // markers: true,
+      //     onEnter: () => {
+      //       gsap
+      //       .to(".hab_segundo_plano, .hab_primer_plano", { 
+      //         position: "fixed", 
+      //         top: 0,
+      //         duration: 0, // Hace que la animación sea instantánea
+      //       }) 
+      //     },
+      //     onLeave: () => {
+      //       gsap
+      //       .to(".hab_segundo_plano, .hab_primer_plano", { 
+      //         clearProps: "all",
+      //         duration: 0, // Hace que la animación sea instantánea
+      //       }) 
+      //     },
+      //     onLeaveBack: () => {
+      //       gsap.to(".hab_segundo_plano, .hab_primer_plano", { 
+      //         clearProps: "all",
+      //         duration: 0, // Hace que la animación sea instantánea
+      //       });
+      //     }
+      //   }
+      // });
       gsap.to(".title_dentro_hab", { 
         blur: 0,
-        xPercent: 100,
+        xPercent: 200,
         scrollTrigger: {
           trigger: "#apreciar-habitacion",
           start: "-100% top",
@@ -113,10 +118,10 @@ const lenis = ref(null);
       });
       gsap.to(".hab_primer_plano", { 
         scale: 1.3, // Cambia este valor al deseado
-        yPercent: -100, 
+        yPercent: 100, 
         scrollTrigger: {
-          trigger: "#entrada-habitacion",
-          start: "-50% top",
+          trigger: "#apreciar-habitacion",
+          start: "top top",
           end: "bottom center",
           scrub: true,
         }
@@ -124,11 +129,11 @@ const lenis = ref(null);
 
       gsap.to(".hab_segundo_plano", { 
         scale: 1.1, // Cambia este valor al deseado
-        yPercent: -100,
+        yPercent: 100,
         scrollTrigger: {
-          trigger: "#entrada-habitacion",
-          start: "-50% top",
-          end: "200% center",
+          trigger: "#apreciar-habitacion",
+          start: "top top",
+          end: "bottom center",
           scrub: true,
           onLeave: () => {
             // gsap.to(".hab_segundo_plano, .hab_primer_plano", { 
@@ -159,8 +164,8 @@ const lenis = ref(null);
           COLORFUL: true,
           COLOR_UPDATE_SPEED: 20,
           PAUSED: false,
-          BACK_COLOR: { r: 0, g: 0, b: 0 },
-          TRANSPARENT: false,
+          // BACK_COLOR: { r: 0, g: 0, b: 0 },
+          TRANSPARENT: true,
           BLOOM: true,
           BLOOM_ITERATIONS: 2,
           BLOOM_RESOLUTION: 256,
@@ -192,7 +197,7 @@ const lenis = ref(null);
   height: 100vh;
   width: 100%;
   position: absolute;
-  top: 100vh;
+  top: 0;
   left: 0%;
   background: url('../assets/images/ilustracion/plano-1.png');
   background-repeat: no-repeat;
@@ -204,7 +209,7 @@ const lenis = ref(null);
   height: 100vh;
   width: 100%;
   position: absolute;
-  top: 100vh;
+  top: 0;
   left: 0%;
   background: url('../assets/images/ilustracion/plano-2.png');
   background-repeat: no-repeat;
@@ -218,6 +223,22 @@ const lenis = ref(null);
   width: 100vw;
   background-color: black;
   z-index: 2;
+}
+#entrada_photoshop {
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgb(0, 0, 0) 88%, rgba(0, 0, 0, 0) 100%);
+  z-index: 2;
+  position: relative;
+}
+#entrada_photoshop__seccion {
+  background: rgb(2,0,2);
+  z-index: 2;
+  position: relative;
+}
+.images-photoshop {
+  height: 200vh; 
+  pointer-events: none; 
+  background-color: rgb(184, 184, 184);
 }
 .noise.loaded {
     -webkit-animation: noise 1.2s steps(3) infinite both;
