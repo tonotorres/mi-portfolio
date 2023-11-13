@@ -12,16 +12,26 @@
         <div class="hab_segundo_plano" ></div>
       </div>
     </div>
-    <div class="row" id="entrada_photoshop" style="height: 50vh; pointer-events: none;">
-      <h2 class="position-absolute" style="top: 30%; left: 0; color: white; z-index: 2; font-size: 10vw; pointer-events: none;"><span>Bienvenido a mi web de arte</span></h2>
+    <div class="row" id="entrada_photoshop" style="height: 75vh; pointer-events: none;">
+      <h2 class="position-absolute" style="top: 30%; left: 0; color: white; z-index: 2; font-size: 25vh; pointer-events: none;"><span>Ilustraciones<br><span style="font-size: 5vh;">Photoshop - Procreate</span></span></h2>
     </div>
-    <div class="row" id="entrada_photoshop__seccion" style="height: 100vh; position: relative; pointer-events: none;">
+    <div class="row" id="entrada_photoshop__seccion" style="height: 50vh; position: relative; pointer-events: none;">
       <div class="col">
         <TransicionPhotoshop></TransicionPhotoshop>
       </div>
     </div>
-    <div class="row position-relative images-photoshop"></div>
+    <div class="row position-relative images-photoshop">
+      <div class="col">
+        <ImagesPhotoshop></ImagesPhotoshop>
+      </div>
     </div>
+    <div class="row position-relative">
+      <div class="col-12 text-center">
+        <h2 class="" style="color: white; z-index: 2; font-size: 25vh; pointer-events: none; mix-blend-mode: exclusion;"><span>Animaciones<br><span style="font-size: 5vh;">After Effects - Procreate</span></span></h2>
+      </div>
+    </div>
+    <div class="animaciones"><AnimacionesIlustracion></AnimacionesIlustracion></div>
+  </div>
     
   </template>
   
@@ -32,6 +42,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import WebGLFluid from 'webgl-fluid';
 import Lenis from '@studio-freight/lenis'
 import TransicionPhotoshop from './TransicionPhotoshop.vue'
+import ImagesPhotoshop from './ImagesPhotoshop.vue'
+import AnimacionesIlustracion from './AnimacionesIlustracion.vue'
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -118,7 +130,7 @@ const lenis = ref(null);
       });
       gsap.to(".hab_primer_plano", { 
         scale: 1.3, // Cambia este valor al deseado
-        yPercent: 100, 
+        yPercent: 90, 
         scrollTrigger: {
           trigger: "#apreciar-habitacion",
           start: "top top",
@@ -192,6 +204,8 @@ const lenis = ref(null);
 }
 .ilustracion_fondo {
   background-color: black;
+  // width: 100vw;
+  overflow-y: hidden;
 }
 .hab_primer_plano {
   height: 100vh;
@@ -204,6 +218,8 @@ const lenis = ref(null);
   background-size: cover;
   z-index: 3;
   pointer-events: none;
+  overflow-y: hidden;
+
 }
 .hab_segundo_plano {
   height: 100vh;
@@ -216,6 +232,8 @@ const lenis = ref(null);
   background-size: cover;
   z-index: 1;
   pointer-events: none;
+  overflow-y: hidden;
+
 }
 .introduccion_ilustracion {
   position: absolute;
@@ -238,8 +256,20 @@ const lenis = ref(null);
 .images-photoshop {
   height: 200vh; 
   pointer-events: none; 
-  background-color: rgb(184, 184, 184);
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgb(172, 144, 144) 49%, rgb(172, 144, 144) 90%, rgb(0, 0, 0) 100%);
 }
+.animaciones {
+  height: 100%; 
+  width: 100vw;
+  overflow-x: hidden;
+  pointer-events: none; 
+  background: transparent;
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(172, 144, 144, 0) 10%, rgba(0, 0, 0, 0) 100%);
+  // Está guapo pero para luego 
+  // background: linear-gradient(180deg, rgb(236, 87, 134) 100% 0%, rgb(236, 87, 134) 49%, rgb(87, 194, 236) 100%);
+}
+
 .noise.loaded {
     -webkit-animation: noise 1.2s steps(3) infinite both;
     animation: noise 1.2s steps(3) infinite both;
@@ -299,33 +329,9 @@ h2 {
     padding: .25em 0 .325em;
     display: block;
     margin: 0 auto;
-    text-shadow: 0 0 80px rgba(255,255,255,.5);
-
-    /* Clip Background Image */
-
-    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    /* Animate Background Image */
-
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: aitf 80s linear infinite;
-
-    /* Activate hardware acceleration for smoother animations */
-
-    -webkit-transform: translate3d(0,0,0);
-    -webkit-backface-visibility: hidden;
+    text-shadow: 0 0 80px rgba(255,255,255,.5)
 
     }
-}
-
-/* Animate Background Image */
-
-@-webkit-keyframes aitf {
-0% { background-position: 0% 50%; }
-100% { background-position: 100% 50%; }
-
 }
 
 canvas {

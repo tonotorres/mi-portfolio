@@ -58,8 +58,6 @@ function clicked(event){
   if(can_pick.value){
     var picked = event.target;
     if(picked_tiles.indexOf(picked) == -1){
-        console.log(picked)
-        
         picked_tiles.push(picked);
         picked.innerHTML = givePic(picked.dataset['type']);
     }

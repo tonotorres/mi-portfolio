@@ -55,7 +55,6 @@
         this.email = event.target.value;
       },
       async sendEmail(){
-        console.log(emailjs)
         emailjs.sendForm('service_tgm4vcm', 'template_qvhg43s', this.$refs.form, 'QpMDusPRtmuAyr3Nw')
         .then((result) => {
           console.log('SUCCESS!', result.text);

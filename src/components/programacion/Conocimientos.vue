@@ -74,7 +74,6 @@
     const isLargeScreen = computed(() => window.innerWidth >= 950);
     function selectOption(index) {
       optionSelected.value = index
-      console.log(optionSelectedComputed.value)
     }
     
 

@@ -88,7 +88,6 @@ export default {
           end: "+=100%",
           pin: true,
           scrub: true
-          // markers: true
         }
       });
 

@@ -1,18 +1,22 @@
 <template>
-    <div style="position: relative; z-index: 3; overflow: hidden;">
+    <div style="position: relative; z-index: 3; overflow: hidden; background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(2,0,36,1) 34%, rgba(0,0,0,0) 100%);">
         <svg ref="overlay" class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
             <defs>
                 <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%"   stop-color="#000000"/>
-                <stop offset="100%" stop-color="#000000"/>
+                <stop offset="60%"   stop-color="#000000"/>
+                <stop offset="100%" stop-color="#02020200"/>
                 </linearGradient>
                 <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%"   stop-color="#000000"/>
-                <stop offset="100%" stop-color="#000000"/>
+                <stop offset="60%"   stop-color="#000000"/>
+                <stop offset="100%" stop-color="#00000000"/>
                 </linearGradient>
                 <linearGradient id="gradient3" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%"   stop-color="#000000"/>
-                <stop offset="100%" stop-color="#101010"/>
+                <stop offset="60%"   stop-color="#000000"/>
+                <stop offset="100%" stop-color="#10101000"/>
                 </linearGradient>
             </defs>
             <path ref="paths" class="shape-overlays__path" :fill="'url(#gradient1)'"></path>
@@ -62,9 +66,8 @@
       gsap.timeline({
         scrollTrigger: {
             trigger: '#entrada_photoshop__seccion',
-            start: "top top",
+            start: "-50% top",
             end: "bottom center",
-            markers: true,
             onEnter: () => toggle()
         }
       });
@@ -76,18 +79,15 @@
             let path = paths[i];
             let d = "M0,0 ";
             for (let j = 0; j < numPoints; j++) {
-            console.log("1")
             d += `L${j * 100 / (numPoints - 1)},${points[j]} `;
             }
             d += "L100,0 Z";
-            console.log("2")
             path.setAttribute("d", d);
             
         }
     }
     function toggle() {
-      tl.progress(0).clear();
-      console.log("hola?")
+      tl.progress(0).clear()
       for (let i = 0; i < numPoints; i++) {
         pointsDelay[i] = Math.random() * delayPointsMax;
       }

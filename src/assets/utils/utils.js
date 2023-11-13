@@ -124,7 +124,8 @@ const getGrid = selector => {
 
 	return elements;
 }
-
+const map = (x, a, b, c, d) => (x - a) * (d - c) / (b - a) + c;
+const clamp = (num, min, max) => num <= min ? min : num >= max ? max : num;
 export {
     preloadImages,
     getGrid,
@@ -134,5 +135,7 @@ export {
 	calcWinsize,
     getScrollValues,
     wrapLines,
-    adjustedBoundingRect
+    adjustedBoundingRect,
+    map,
+    clamp
 };
