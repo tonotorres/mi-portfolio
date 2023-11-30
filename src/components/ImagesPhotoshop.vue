@@ -3,28 +3,28 @@
 <div class="gallery">
 
 <div class="image__photoshop">
-  <img src="../assets/images/ilustracion/photoshop-1.jpg" alt="" loading="lazy">
+  <img src="../assets/images/ilustracion/photoshop-1.webp" alt="" loading="lazy">
 </div>
 <div class="image__photoshop">
-  <img src="../assets/images/ilustracion/photoshop-2.jpg" alt="" loading="lazy">
+  <img src="../assets/images/ilustracion/photoshop-2.webp" alt="" loading="lazy">
 </div>
 <div class="image__photoshop">
-  <img src="../assets/images/ilustracion/photoshop-3.jpg" alt="" loading="lazy">
+  <img src="../assets/images/ilustracion/photoshop-3.webp" alt="" loading="lazy">
 </div>
 <div class="image__photoshop">
-  <img src="../assets/images/ilustracion/photoshop-4.jpg" alt="" loading="lazy">
+  <img src="../assets/images/ilustracion/photoshop-4.webp" alt="" loading="lazy">
 </div>
 <div class="image__photoshop">
-  <img src="../assets/images/ilustracion/photoshop-5.jpg" alt="" loading="lazy">
+  <img src="../assets/images/ilustracion/photoshop-5.webp" alt="" loading="lazy">
 </div>
 <div class="image__photoshop">
-  <img src="../assets/images/ilustracion/photoshop-6.jpg" alt="" loading="lazy">
+  <img src="../assets/images/ilustracion/photoshop-6.webp" alt="" loading="lazy">
 </div>
 <div class="image__photoshop">
-  <img src="../assets/images/ilustracion/photoshop-7.jpg" alt="" loading="lazy">
+  <img src="../assets/images/ilustracion/photoshop-7.webp" alt="" loading="lazy">
 </div>
 <div class="image__photoshop">
-  <img src="../assets/images/ilustracion/photoshop-8.jpg" alt="" loading="lazy">
+  <img src="../assets/images/ilustracion/photoshop-8.webp" alt="" loading="lazy">
 </div>
 
 </div>

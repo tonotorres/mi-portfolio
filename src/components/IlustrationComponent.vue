@@ -4,10 +4,11 @@
     <h2 class="title_dentro_hab" style="position: absolute; top: 50%;filter: blur(509px);text-align: center; font-size: 10vw; z-index: 3;">Hola que tal</h2>
     <div class="app-noise noise loaded" data-v-ca1bafaa="" style="opacity: 0.1;"></div>
     <div class="row position-relative" style="height: 100vh; pointer-events: none;">
-      <div class="introduccion_ilustracion row text-center justify-content-center"><h2 class="color-white " style="font-size: 10vw">Hola haz scroll hacia abajo</h2> </div>
+      <div class="introduccion_ilustracion row text-center justify-content-center"><h2 class="color-white intro__info" style="font-size: 10vw">Haz scroll para ver mi portfolio</h2> </div>
     </div>
     <div class="row" id="apreciar-habitacion" style="height: 200vh; pointer-events: none;">
       <div class="col d-flex justify-content-center position-relative">
+        <div class="hab_cero_plano" ></div>
         <div class="hab_primer_plano" ></div>
         <div class="hab_segundo_plano" ></div>
       </div>
@@ -25,14 +26,20 @@
         <ImagesPhotoshop></ImagesPhotoshop>
       </div>
     </div>
-    <div class="row position-relative">
+    <div class="row position-relative" style="pointer-events: none">
       <div class="col-12 text-center">
         <h2 class="" style="color: white; z-index: 2; font-size: 25vh; pointer-events: none; mix-blend-mode: exclusion;"><span>Animaciones<br><span style="font-size: 5vh;">After Effects - Procreate</span></span></h2>
       </div>
     </div>
     <div class="animaciones"><AnimacionesIlustracion></AnimacionesIlustracion></div>
+    <div class="row y-mucho-mas_section" style="height: 200vh; pointer-events: none; width: 100vw;">
+      <!-- <video class="inner-wrapper__item-imginner" autoplay loop muted>
+        <source src="../assets/images/ilustracion/caida.webm" type="video/webm">
+        <p>Tu navegador no puede reproducir el video proporcionado.</p>
+      </video> -->
+    </div>
   </div>
-    
+
   </template>
   
   <script setup>
@@ -138,7 +145,16 @@ const lenis = ref(null);
           scrub: true,
         }
       });
-
+      gsap.to(".hab_cero_plano", { 
+        scale: 0.8, // Cambia este valor al deseado
+        yPercent: 90, 
+        scrollTrigger: {
+          trigger: "#apreciar-habitacion",
+          start: "top top",
+          end: "bottom center",
+          scrub: true,
+        }
+      });
       gsap.to(".hab_segundo_plano", { 
         scale: 1.1, // Cambia este valor al deseado
         yPercent: 100,
@@ -205,7 +221,7 @@ const lenis = ref(null);
 .ilustracion_fondo {
   background-color: black;
   // width: 100vw;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 .hab_primer_plano {
   height: 100vh;
@@ -213,10 +229,25 @@ const lenis = ref(null);
   position: absolute;
   top: 0;
   left: 0%;
-  background: url('../assets/images/ilustracion/plano-1.png');
+  background: url('../assets/images/ilustracion/plano-1.webp');
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 3;
+  pointer-events: none;
+  overflow-y: hidden;
+
+}
+
+.hab_cero_plano {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0%;
+  background: url('../assets/images/ilustracion/plano-0.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
   pointer-events: none;
   overflow-y: hidden;
 
@@ -227,10 +258,10 @@ const lenis = ref(null);
   position: absolute;
   top: 0;
   left: 0%;
-  background: url('../assets/images/ilustracion/plano-2.png');
+  background: url('../assets/images/ilustracion/plano-2.webp');
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
   overflow-y: hidden;
 
@@ -259,17 +290,39 @@ const lenis = ref(null);
   background: rgb(0,0,0);
   background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgb(172, 144, 144) 49%, rgb(172, 144, 144) 90%, rgb(0, 0, 0) 100%);
 }
+.intro__info {
+	max-width: 15ch;
+    margin-bottom: 20vh;
+    padding-bottom: 1rem;
+    line-height: 1.1;
+    position: relative;
+    align-self: end;
+    color: white;
+
+}
+
+.intro__info::after {
+	content: "";
+	width: 3px;
+	height: 20vh;
+	background: #fff;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+}
 .animaciones {
-  height: 100%; 
+  position: relative;
+  // height: 300vh; 
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
   pointer-events: none; 
   background: transparent;
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(172, 144, 144, 0) 10%, rgba(0, 0, 0, 0) 100%);
   // Está guapo pero para luego 
   // background: linear-gradient(180deg, rgb(236, 87, 134) 100% 0%, rgb(236, 87, 134) 49%, rgb(87, 194, 236) 100%);
 }
-
+.y-mucho-mas_section {
+  background: linear-gradient(180deg,rgba(0,0,0,1) 0%, rgb(236, 87, 134) 19%, rgb(236, 87, 134) 49%, rgb(87, 194, 236) 100%);
+}
 .noise.loaded {
     -webkit-animation: noise 1.2s steps(3) infinite both;
     animation: noise 1.2s steps(3) infinite both;
@@ -323,7 +376,7 @@ const lenis = ref(null);
 }
 h2 {
   color: #fff;
-  font-family: "Cartoon";
+  font-family: moret, serif;
   span {
     letter-spacing: 0;
     padding: .25em 0 .325em;
@@ -338,7 +391,7 @@ canvas {
   position: fixed;
   inset: 0;
   z-index: 0;
-  // background-image: url("../assets/images/programacion/netlu.png");
+  // background-image: url("../assets/images/programacion/netlu.webp");
 }
 #fondoPintura {
   height: 100vh;

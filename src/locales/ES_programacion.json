@@ -46,6 +46,11 @@
     "experiencia_legal_textos_1": "Esta web es meramente informativa, también me encargue de optimizarla para mejorar su SEO, también encontré plugins para que los formularios se envíen a un apartado de correos de la empresa.",
     "experiencia_legal_logos": [],
 
+    "experiencia_ias_titulo": "Portfolio IA's",
+    "experiencia_ias_fecha": "",
+    "experiencia_ias_subtitulo": "Actualmente me encuentro desarrollando mis portafolios, en este hablo sobre las inteligencias artificiales que domino ya sea para desarrollar webs como para edición de video o animación.",
+    "experiencia_ias_logos": [],
+
     "conocimientos_titulo": "Conocimientos",
     "conocimientos_vue": "Desde que comencé en el desarrollo frontend, he trabajado con Vue.js durante tres años, dos con Vue 2 y uno con Vue 3. Además, he trabajado con Vuex, una biblioteca de gestión de estado para Vue.js. Recientemente he comenzado a explorar Pinia, una solución de gestión de estado más simple y modular que Vuex. También he montado proyectos con Nuxt, un marco basado en Vue.js para crear aplicaciones web modernas. Aunque mi experiencia es sólida, siempre estoy buscando aprender y adaptarme a las nuevas tecnologías y prácticas en el mundo del desarrollo frontend.",
     "conocimientos_figma": "Me encanta el diseño web, sé utilizar Figma, Photoshop, Illustrator y After Effects. Te dejo mi portfolio de diseños por aquí.",

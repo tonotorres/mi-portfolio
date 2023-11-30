@@ -99,9 +99,9 @@ a:not(.card__image):focus-visible {
 }
 
 main {
-	position: relative;
+	/* position: relative;
 	overflow: hidden;
-	width: 100%;
+	width: 100%; */
 }
 
 .frame {

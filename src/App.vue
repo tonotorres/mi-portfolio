@@ -14,6 +14,7 @@ export default {
 html.lenis {
   height: auto;
   scroll-behavior: auto !important;
+  overflow-x: hidden;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

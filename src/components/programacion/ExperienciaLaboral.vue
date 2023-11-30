@@ -50,6 +50,14 @@
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion text-white pt-4">{{$t("experiencia_legal_textos_1")}}</h2></div><div class="col-1"></div></div>
       <div class="row" v-if="isNotTouchDevice"><div class="col-1"></div><logos-component :logos="experiencia_legal_logos"></logos-component><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-center"><a href="https://legalspain.es/" target="_blank"  class="section_subtitle_programacion text-white pt-4 d-block">{{$t("ver_proyecto")}}</a></div><div class="col-1"></div></div>
+    </dialog>
+    <dialog id="iasModal" class="modal-personalizado " >  
+      <div class="row"><div class="col text-end"><button id="hideIas" class="close-button mr-4"><img src="../../assets/images/programacion/cruz.svg" alt="Close"></button></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_title_programacion">{{$t("experiencia_ias_titulo")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_subtitle_programacion">{{$t("experiencia_ias_fecha")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_main-text_programacion pt-4 mb-4">{{$t("experiencia_ias_subtitulo")}}</h2></div><div class="col-1"></div></div>
+      <div class="row" v-if="isNotTouchDevice"><div class="col-1"></div><logos-component :logos="experiencia_ias_logos"></logos-component><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-center"><a href="https://tonitorresportfolio.com/ias" target="_blank"  class="section_subtitle_programacion mt-4 text-white pt-4 d-block">{{$t("ver_proyecto")}}</a></div><div class="col-1"></div></div>
     </dialog>  
 
     <!-- Sección -->
@@ -85,6 +93,11 @@
             <li class="imagen-empleo">
               <a id="showLegal" class="link-empleo">
                 <img src="..\..\assets\images\programacion\legalspain.webp" style="aspect-ratio: 16 / 9;" loading="lazy"/>
+              </a>
+            </li>
+            <li class="imagen-empleo">
+              <a id="showIAS" class="link-empleo">
+                <img src="..\..\assets\images\programacion\ias.png" style="aspect-ratio: 16 / 9;" loading="lazy"/>
               </a>
             </li>
           </ul>
@@ -152,6 +165,14 @@
       require('@/assets/images/logos/js.svg'),
       require('@/assets/images/logos/css.svg'),
       require('@/assets/images/logos/seo.png'),
+    ];
+    const experiencia_ias_logos = [
+      require('@/assets/images/logos/vue.svg'),
+      require('@/assets/images/logos/js.svg'),
+      require('@/assets/images/logos/css.svg'),
+      require('@/assets/images/logos/sass.png'),
+      require('@/assets/images/logos/gsap.png'),
+      require('@/assets/images/logos/threejs.png'),
     ];
 
     /* When the mouse is entering */
@@ -316,12 +337,19 @@
     document.getElementById('hideLegal').onclick = function() {    
       dialogLegal.close();
     }
+    var dialogIas= document.getElementById('iasModal');    
+    document.getElementById('showIAS').onclick = function() {    
+      dialogIas.show();    
+    };    
+    document.getElementById('hideIas').onclick = function() {    
+      dialogIas.close();
+    }
     });
 
   </script>
     
 <style scoped>
-#netluModal {
+#netluModal, #iasModal {
   background-image: url("../../assets/images/programacion/netlu_blur.webp");
 }
 #satecModal {
