@@ -40,7 +40,7 @@
 }
 /* Colores */
 
-.background_programacion_gris {
+.introduccion__flex-slide--gris {
   background-color: #2C2546 !important;
   border:1px solid #ddd;
 }
@@ -61,18 +61,18 @@
  }
 /* Tipos de Texto  */
 
-  .introduction_title_programacion {
+  .introduccion__titulo--programacion {
     font-family: "Mona Sans Bold Wide";
     color: #FFFFFF;
     font-size: 6vw;
   }
-  .introduction_sub-title_programacion {
+  .introduccion__subtitulo--programacion {
     font-family: "Mona Sans SemiBold";
     color: #FFFFFF;
     font-size: 2.5vw;
   }
 
-  .normal-text { 
+  .introduccion__texto--normal { 
     font-family: "Mona Sans Regular";
     color: #FFFFFF;
     font-size: 1.8vw;
@@ -100,7 +100,7 @@
     font-size: 2vw;
     font-family: "Mona Sans SemiBold";
   }
-  .modal_normal-text_programacion {
+  .modal_introduccion__texto--normal_programacion {
     color: #000000;
     font-size: 2vw;
     font-family: "Mona Sans Regular";
@@ -141,7 +141,7 @@
   height: 20vh;
 }
 @media (max-width: 1500px) {
-  .normal-text { 
+  .introduccion__texto--normal { 
     font-family: "Mona Sans Regular";
     color: #FFFFFF;
     /* text-align: left; */
@@ -158,12 +158,12 @@
   .separacion_secciones_programacion {
     height: 10vh;
   }
-  .introduction_title_programacion {
+  .introduccion__titulo--programacion {
     font-family: "Mona Sans Bold Wide";
     color: #FFFFFF;
     font-size: 10vw;
   }
-  .introduction_sub-title_programacion {
+  .introduccion__subtitulo--programacion {
     font-family: "Mona Sans SemiBold";
     color: #FFFFFF;
     font-size: 4.5vw;
@@ -171,7 +171,7 @@
   .texto_formulario {
     font-size: 3vw;
   }
-  .normal-text { 
+  .introduccion__texto--normal { 
     font-family: "Mona Sans Regular";
     color: #FFFFFF;
     font-size: 3vw;
@@ -188,7 +188,7 @@
     font-size: 5.2vw;
     font-family: "Mona Sans SemiBold";
   }
-  .modal_normal-text_programacion {
+  .modal_introduccion__texto--normal_programacion {
     color: #000000;
     font-size: 4vw;
     font-family: "Mona Sans Regular";

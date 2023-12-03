@@ -1,28 +1,28 @@
 <template>
     <section class="container-fluid pt-4 introduccion">
       <div class="row pt-4">
-          <div class="col-1 d-md-block d-sm-none"></div>
-          <div class="col-md-3 col-sm-12 fondo-imagen">
-            <img class="responsive-image" src="@/assets/images/mi_foto.webp" alt="Este soy yo!">
+          <div class="col-1 d-md-block d-sm-none introduccion__col"></div>
+          <div class="col-md-3 col-sm-12 introduccion__col--imagen">
+            <img class="introduccion__imagen" src="@/assets/images/mi_foto.webp" alt="Este soy yo!">
           </div>
           <div class="col-md-7 col-sm-12" style="padding-left: 3vw;">
               <div class="row pt-0">
                 <div class="col pl-4">
-                    <div class="row pb-1 mt-2 mt-sm-0"><div class="col"><h2 class="introduction_title_programacion text-md-start text-sm-center" v-html="scrambledTitle"></h2></div></div>
-                    <div class="row pb-1"><div class="col"><h4 class="introduction_sub-title_programacion text-md-start text-sm-center" v-html="scrambledSubTitle"></h4></div></div>
-                    <div class="row"><div class="col"><p class="normal-text text-md-start text-sm-center">{{$t("introduccion_texto")}}{{$t("introduccion_texto_2")}}</p></div></div>
+                    <div class="row pb-1 mt-2 mt-sm-0"><div class="col"><h2 class="introduccion__titulo--programacion text-md-start text-sm-center">{{$t("introduccion_titulo")}}</h2></div></div>
+                    <div class="row pb-1"><div class="col"><h4 class="introduccion__subtitulo--programacion text-md-start text-sm-center">{{$t("introduccion_subtitulo")}}</h4></div></div>
+                    <div class="row"><div class="col"><p class="introduccion__texto--normal text-md-start text-sm-center">{{$t("introduccion_texto")}}{{$t("introduccion_texto_2")}}</p></div></div>
                     <div class="row">
                       <div class="col col_links d-md-block d-flex justify-content-center">
                         <div class="flex-container">
-                          <a class="flex-slide home background_programacion_gris" href="https://www.linkedin.com/in/toni-torres-cabero-73649921a/" target="_blank" >
-                            <div class="flex-title"><img src="../../assets/images/logos/linkedin.svg" alt="LinkedIn" class="img-link"><p class="flex-about pt-1">{{$t("introduccion_linkedin")}}</p></div>
+                          <a class="flex-slide home introduccion__flex-slide--gris" href="https://www.linkedin.com/in/toni-torres-cabero-73649921a/" target="_blank" >
+                            <div class="introduccion__flex-title"><img src="../../assets/images/logos/linkedin.svg" alt="LinkedIn" class="img-link"><p class="flex-about pt-1">{{$t("introduccion_linkedin")}}</p></div>
                           </a>
-                          <a class="flex-slide about background_programacion_gris" href="https://github.com/tonotorres" target="_blank">
-                            <div class="flex-title"><img src="../../assets/images/logos/github.svg" alt="GitHub" class="img-link"><p class="flex-about pt-1">{{$t("introduccion_github")}}</p></div>
+                          <a class="flex-slide about introduccion__flex-slide--gris" href="https://github.com/tonotorres" target="_blank">
+                            <div class="introduccion__flex-title"><img src="../../assets/images/logos/github.svg" alt="GitHub" class="img-link"><p class="flex-about pt-1">{{$t("introduccion_github")}}</p></div>
 
                           </a>
-                          <a class="flex-slide-cv work background_programacion_gris" href="">
-                            <div class="flex-title"><img src="../../assets/images/logos/descargar_cv.svg" alt="Descargar CV" class="img-link"><p class="flex-about pt-1">{{$t("introduccion_cv")}}</p></div>
+                          <a class="flex-slide-cv work introduccion__flex-slide--gris" href="./cv-antonio-torres-cabero.pdf" download>
+                            <div class="introduccion__flex-title"><img src="../../assets/images/logos/descargar_cv.svg" alt="Descargar CV" class="img-link"><p class="flex-about pt-1">{{$t("introduccion_cv")}}</p></div>
                           </a>
                         </div>
                       </div>
@@ -36,45 +36,14 @@
   </template>
   
   <script setup>
-      import { ref, onMounted } from 'vue';
+      import { onMounted } from 'vue';
       import { useI18n } from 'vue-i18n'
 
       // Variables
       const { t } = useI18n()
-      const scrambledTitle = ref('');
-      const scrambledSubTitle = ref('');
-      const targetTitle = t("introduccion_titulo");
-      const targetSubTitle = t("introduccion_subtitulo");
-      const scrambleChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-
-      // Movimiento de texto
-
-      const scramble = (text, duration, scrambledRef) => {
-        const startTime = new Date().getTime();
-        const scrambleText = () => {
-          let result = "";
-          for (let i = 0; i < text.length; i++) {
-            result += scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
-          }
-          scrambledRef.value = result;
-      };
-  
-        const update = () => {
-          const currentTime = new Date().getTime();
-          if (currentTime - startTime < duration) {
-            scrambleText();
-            requestAnimationFrame(update);
-          } else {
-            scrambledRef.value = text;
-          }
-        };
-  
-        update();
-      };
 
       onMounted(() => { 
-        scramble(targetTitle, 1200, scrambledTitle);
-        scramble(targetSubTitle, 1500, scrambledSubTitle);
+
       });
 
   </script>
@@ -85,12 +54,10 @@
   .introduccion {
     position: relative;
     z-index: 10;
-    /* background-image:  radial-gradient(hsla(0,0%,58%,.3) 1px,transparent 0);
-    background-size: 20px 20px; */
   }
 
 
-  .responsive-image {
+  .introduccion__imagen {
     max-width: 100%;
     width: 100%;
     height: auto;
@@ -99,7 +66,7 @@
     bottom: 0%;
     left: 0%;
   }
-  .fondo-imagen {
+  .introduccion__col--imagen {
     background-image: linear-gradient(to left, #c244d6c9, #a85ae7, #8a6bf3, #6679fb, #3284ffcb);
     border-radius: 9px;
     position: relative;
@@ -123,7 +90,7 @@
     border: 1px solid white;
     display: -webkit-flex; /* Safari */
   }
-  .flex-title {
+  .introduccion__flex-title {
     position: relative;
     height: 100%;
     margin: auto;
@@ -188,10 +155,10 @@
     transition: left 0.6s;
   }
 
-  .flex-title:hover .img-link {
+  .introduccion__flex-title:hover .img-link {
     left: 3%;
   }
-  .flex-title:hover .flex-about {
+  .introduccion__flex-title:hover .flex-about {
     -webkit-transition: opacity 3s ease;
     -moz-transition: opacity 3s ease;
     -ms-transition: opacity 3s ease;
@@ -204,7 +171,7 @@
       font-size: 1.9vw;
       top: 10%;
     }
-    .flex-slide-cv .flex-title .flex-about {
+    .flex-slide-cv .introduccion__flex-title .flex-about {
       left: 10%;
     }
   }
@@ -213,7 +180,7 @@
       font-size: 1.9vw;
       top: 11%;
     }
-    .flex-slide-cv .flex-title .flex-about {
+    .flex-slide-cv .introduccion__flex-title .flex-about {
       left: 10%;
     }
     .img-link {
@@ -226,7 +193,7 @@
       font-size: 1.9vw;
       top: 17%;
     }
-    .flex-slide-cv .flex-title .flex-about {
+    .flex-slide-cv .introduccion__flex-title .flex-about {
       left: 10%;
     }
     .img-link {
@@ -239,10 +206,10 @@
       font-size: 1.8vw;
       top: 19%;
     }
-    .flex-title .flex-about { 
+    .introduccion__flex-title .flex-about { 
       left: 10%;
     }
-    .flex-slide-cv .flex-title .flex-about {
+    .flex-slide-cv .introduccion__flex-title .flex-about {
       left: 10%;
     }
     .img-link {
@@ -255,10 +222,10 @@
       font-size: 1.8vw;
       top: 21%;
     }
-    .flex-title .flex-about { 
+    .introduccion__flex-title .flex-about { 
       left: 10%;
     }
-    .flex-slide-cv .flex-title .flex-about {
+    .flex-slide-cv .introduccion__flex-title .flex-about {
       font-size: 1.7vw;
       left: 10%;
     }
@@ -272,10 +239,10 @@
       font-size: 1.8vw;
       top: 24%;
     }
-    .flex-title .flex-about { 
+    .introduccion__flex-title .flex-about { 
       left: 10%;
     }
-    .flex-slide-cv .flex-title .flex-about {
+    .flex-slide-cv .introduccion__flex-title .flex-about {
       font-size: 1.7vw;
       left: 10%;
     }
@@ -289,10 +256,10 @@
       font-size: 1.7vw;
       top: 26%;
     }
-    .flex-title .flex-about { 
+    .introduccion__flex-title .flex-about { 
       left: 10%;
     }
-    .flex-slide-cv .flex-title .flex-about {
+    .flex-slide-cv .introduccion__flex-title .flex-about {
       font-size: 1.6vw;
       left: 12%;
     }
@@ -306,10 +273,10 @@
       font-size: 2vw;
       top: 26%;
     }
-    .flex-title .flex-about { 
+    .introduccion__flex-title .flex-about { 
       left: 16%;
     }
-    .flex-slide-cv .flex-title .flex-about {
+    .flex-slide-cv .introduccion__flex-title .flex-about {
       font-size: 1.6vw;
       top: 30%;
       left: 15%;
@@ -326,7 +293,7 @@
     .img-link {
       left: 33%;
     }
-    .flex-title:hover .img-link {
+    .introduccion__flex-title:hover .img-link {
       left: 33%;
     }
     .flex-container {
@@ -337,15 +304,14 @@
     .img-link {
       left: 31%;
     }
-    .flex-title:hover .img-link {
+    .introduccion__flex-title:hover .img-link {
       left: 31%;
     }
   }
   @media screen and (max-width: 767px) {
-    .responsive-image {
+    .introduccion__imagen {
       height: auto;
       width: 50vh;
-      position: relative;
       border-radius: 9px;
       position: relative;
       outline: 1px solid white;
@@ -353,7 +319,7 @@
       -webkit-animation: none;
               animation: none;
     }
-    .fondo-imagen {
+    .introduccion__col--imagen {
         background-image: none;
         border-radius: 0px;
         position: relative;
@@ -364,7 +330,7 @@
     .img-link {
       left: 29%;
     }
-    .flex-title:hover .img-link {
+    .introduccion__flex-title:hover .img-link {
       left: 29%;
     }
   }
@@ -372,7 +338,7 @@
     .img-link {
       left: 27%;
     }
-    .flex-title:hover .img-link {
+    .introduccion__flex-title:hover .img-link {
       left: 27%;
     }
     .flex-container {
@@ -383,7 +349,7 @@
     .img-link {
       left: 23%;
     }
-    .flex-title:hover .img-link {
+    .introduccion__flex-title:hover .img-link {
       left: 23%;
     }
     .flex-container {
@@ -395,7 +361,7 @@
     .img-link {
       left: 19%;
     }
-    .flex-title:hover .img-link {
+    .introduccion__flex-title:hover .img-link {
       left: 19%;
     }
     .flex-container {

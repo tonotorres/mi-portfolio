@@ -6,8 +6,8 @@
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_title_programacion">{{$t("experiencia_netlu_titulo")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_subtitle_programacion">{{$t("experiencia_netlu_fecha")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_main-text_programacion pt-4">{{$t("experiencia_netlu_subtitulo")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_netlu_textos_1")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_netlu_textos_2")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_introduccion__texto--normal_programacion pt-md-4 pt-sm-2">{{$t("experiencia_netlu_textos_1")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_introduccion__texto--normal_programacion pt-md-4 pt-sm-2">{{$t("experiencia_netlu_textos_2")}}</h2></div><div class="col-1"></div></div>
       <div class="row" v-if="isNotTouchDevice"><div class="col-1"></div><logos-component :logos="experiencia_netlu_logos"></logos-component><div class="col-1"></div></div>
     </dialog>
     <dialog id="amuraModal" class="modal-personalizado " >  
@@ -15,9 +15,9 @@
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_title_programacion">{{$t("experiencia_amura_titulo")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_subtitle_programacion">{{$t("experiencia_amura_fecha")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_main-text_programacion pt-4">{{$t("experiencia_amura_subtitulo")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_amura_textos_1")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_amura_textos_2")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_amura_textos_3")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_introduccion__texto--normal_programacion pt-md-4 pt-sm-2">{{$t("experiencia_amura_textos_1")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_introduccion__texto--normal_programacion pt-md-4 pt-sm-2">{{$t("experiencia_amura_textos_2")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_introduccion__texto--normal_programacion pt-md-4 pt-sm-2">{{$t("experiencia_amura_textos_3")}}</h2></div><div class="col-1"></div></div>
       <div class="row" v-if="isNotTouchDevice"><div class="col-1"></div><logos-component :logos="experiencia_amura_logos"></logos-component><div class="col-1"></div></div>
     </dialog>
     <dialog id="satecModal" class="modal-personalizado " >  
@@ -25,10 +25,10 @@
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_title_programacion">{{$t("experiencia_satec_titulo")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_subtitle_programacion">{{$t("experiencia_satec_fecha")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_main-text_programacion pt-4">{{$t("experiencia_satec_subtitulo")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_satec_textos_1")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_satec_textos_2")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_satec_textos_3")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion pt-md-4 pt-sm-2">{{$t("experiencia_satec_textos_4")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_introduccion__texto--normal_programacion pt-md-4 pt-sm-2">{{$t("experiencia_satec_textos_1")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_introduccion__texto--normal_programacion pt-md-4 pt-sm-2">{{$t("experiencia_satec_textos_2")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_introduccion__texto--normal_programacion pt-md-4 pt-sm-2">{{$t("experiencia_satec_textos_3")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_introduccion__texto--normal_programacion pt-md-4 pt-sm-2">{{$t("experiencia_satec_textos_4")}}</h2></div><div class="col-1"></div></div>
       <div class="row" v-if="isNotTouchDevice"><div class="col-1"></div><logos-component :logos="experiencia_satec_logos"></logos-component><div class="col-1"></div></div>
 
     </dialog>
@@ -37,8 +37,8 @@
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_title_programacion text-white">{{$t("experiencia_jl_titulo")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_subtitle_programacion text-white">{{$t("experiencia_jl_fecha")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_main-text_programacion text-white pt-4">{{$t("experiencia_jl_subtitulo")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion text-white pt-4">{{$t("experiencia_jl_textos_1")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion text-white pt-4">{{$t("experiencia_jl_textos_2")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_introduccion__texto--normal_programacion text-white pt-4">{{$t("experiencia_jl_textos_1")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_introduccion__texto--normal_programacion text-white pt-4">{{$t("experiencia_jl_textos_2")}}</h2></div><div class="col-1"></div></div>
       <div class="row" v-if="isNotTouchDevice"><div class="col-1"></div><logos-component :logos="experiencia_jl_logos"></logos-component><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-center"><a href="https://jlsound.es/" target="_blank" class="section_subtitle_programacion text-white pt-4 d-block">{{$t("ver_proyecto")}}</a></div><div class="col-1"></div></div>
     </dialog>
@@ -47,7 +47,7 @@
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_title_programacion text-white">{{$t("experiencia_legal_titulo")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="section_subtitle_programacion text-white">{{$t("experiencia_legal_fecha")}}</h2></div><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_main-text_programacion text-white pt-4">{{$t("experiencia_legal_subtitulo")}}</h2></div><div class="col-1"></div></div>
-      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_normal-text_programacion text-white pt-4">{{$t("experiencia_legal_textos_1")}}</h2></div><div class="col-1"></div></div>
+      <div class="row"><div class="col-1"></div><div class="col text-start"><h2 class="modal_introduccion__texto--normal_programacion text-white pt-4">{{$t("experiencia_legal_textos_1")}}</h2></div><div class="col-1"></div></div>
       <div class="row" v-if="isNotTouchDevice"><div class="col-1"></div><logos-component :logos="experiencia_legal_logos"></logos-component><div class="col-1"></div></div>
       <div class="row"><div class="col-1"></div><div class="col text-center"><a href="https://legalspain.es/" target="_blank"  class="section_subtitle_programacion text-white pt-4 d-block">{{$t("ver_proyecto")}}</a></div><div class="col-1"></div></div>
     </dialog>

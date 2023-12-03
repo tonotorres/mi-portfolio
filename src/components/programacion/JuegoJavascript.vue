@@ -1,5 +1,5 @@
 <template>
-    <div id="juego-javascript" class="background_programacion_gris">
+    <div id="juego-javascript" class="introduccion__flex-slide--gris">
       <span v-for="(tile, index) in tiles" :key="index" @click="clicked" :data-type="tile" class="tile_box">
         <i class="fa-solid fa-circle-question"></i>
       </span>

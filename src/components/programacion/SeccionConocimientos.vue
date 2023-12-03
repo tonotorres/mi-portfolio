@@ -6,7 +6,7 @@
           <img class="conocimientos-image img-fluid h-75" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[0]"  alt="Vue">
         </div>
         <div class="col-7 text-start h-100">
-          <h2 class="normal-text">{{$t("conocimientos_vue")}}</h2>
+          <h2 class="introduccion__texto--normal">{{$t("conocimientos_vue")}}</h2>
         </div>
         <div class="col-1"></div>
       </div>
@@ -20,7 +20,7 @@
         <div class="col-7 text-start">
           <div class="row">
             <div class="col">
-              <h2 class="normal-text">{{$t("conocimientos_figma")}}</h2>
+              <h2 class="introduccion__texto--normal">{{$t("conocimientos_figma")}}</h2>
             </div>
           </div>
           <div class="row pt-4 seccion-conocimiento">
@@ -45,7 +45,7 @@
                 <img class="conocimientos-image w-100 h-auto" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[2]"  alt="Figma">
             </div>
             <div class="col-lg-7 d-md-block d-sm-none text-md-start">
-                <h2 class="normal-text text-lg-start text-sm-center">{{$t("conocimientos_javascript")}}</h2>
+                <h2 class="introduccion__texto--normal text-lg-start text-sm-center">{{$t("conocimientos_javascript")}}</h2>
             </div>
             <div class="col-1"></div>
         <div class="row pt-4 seccion-conocimiento">
@@ -54,7 +54,7 @@
               <JuegoJavascript></JuegoJavascript>
             </div>
             <div class="col-1 d-md-none d-sm-block"></div>
-            <div class="col-lg-4 col-md-4 col-xl-6 mt-sm-4 mt-md-0 text-start d-flex flex-sm-column justify-content-sm-center justify-content-lg-start background_programacion_gris">
+            <div class="col-lg-4 col-md-4 col-xl-6 mt-sm-4 mt-md-0 text-start d-flex flex-sm-column justify-content-sm-center justify-content-lg-start introduccion__flex-slide--gris">
               <div class="row p-4 dialogo-javascript"><p class="font-regular text-white text-lg-start text-sm-center h3" ref="myText"></p></div>
             </div>
             <div class="col-sm-1 col-md-0"></div>
@@ -69,7 +69,7 @@
           <img class="conocimientos-image w-100 h-auto" loading="lazy" :src="logos[3]"  alt="CSS Imagen">
         </div>
         <div class="col-lg-7 d-md-block d-sm-none text-md-start">
-          <div class="row"><h2 class="normal-text text-lg-start text-sm-center">{{$t("conocimientos_css")}}</h2></div>
+          <div class="row"><h2 class="introduccion__texto--normal text-lg-start text-sm-center">{{$t("conocimientos_css")}}</h2></div>
           <div class="row h-100 w-100 px-lg-4 px-xl-0">
             <JuegoCss></JuegoCss>
           </div>
@@ -85,7 +85,7 @@
           <img class="conocimientos-image img-fluid h-75" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[4]"  alt="Vue">
         </div>
         <div class="col-7 text-start">
-          <h2 class="normal-text" style="font-size: 2.5vw;">{{$t("conocimientos_bootstrap")}}</h2>
+          <h2 class="introduccion__texto--normal" style="font-size: 2.5vw;">{{$t("conocimientos_bootstrap")}}</h2>
         </div>
         <div class="col-1"></div>
       </div>
@@ -125,7 +125,7 @@
     <div v-show="optionSelectedComputed == 7">
       <div class="row pt-4 seccion-conocimiento">
         <div class="col d-flex justify-content-center position-relative" style="height: 872px;">
-          <!-- <h2 class="introduction_title_programacion" style="position: absolute; top: 0px; left: 0px;">SPLINE PERMITE HACER COSAS COMO ESTAS</h2> -->
+          <!-- <h2 class="introduccion__titulo--programacion" style="position: absolute; top: 0px; left: 0px;">SPLINE PERMITE HACER COSAS COMO ESTAS</h2> -->
           <div class="box medium">
             <a href="https://spline.design/" target="_blank" class="glitch">{{$t("conocimientos_spline")}}</a>
           </div>
@@ -141,7 +141,7 @@
           <img class="conocimientos-image img-fluid h-75" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[8]"  alt="Vue">
         </div>
         <div class="col-7 text-start">
-          <h2 class="normal-text">{{$t("conocimientos_node")}}</h2>
+          <h2 class="introduccion__texto--normal">{{$t("conocimientos_node")}}</h2>
         </div>
         <div class="col-1"></div>
       </div>
@@ -153,7 +153,7 @@
           <img class="conocimientos-image img-fluid h-75" loading="lazy" style="position: relative; z-index: 20; touch-action: pan-y;" :src="logos[9]"  alt="Vue">
         </div>
         <div class="col-7 text-start">
-          <h2 class="normal-text pt-4" style="font-size: 2.5vw;">{{$t("conocimientos_react")}}</h2>
+          <h2 class="introduccion__texto--normal pt-4" style="font-size: 2.5vw;">{{$t("conocimientos_react")}}</h2>
         </div>
         <div class="col-1"></div>
       </div>
