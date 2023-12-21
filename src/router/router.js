@@ -26,6 +26,11 @@ const routes = [
     name: 'IAS',
     component: () => import('@/components/ias/IasComponent.vue'),
   },
+  {
+    path: '/blavet',
+    name: 'Blavet',
+    component: () => import('@/components/blavet/HomeBlavet.vue'),
+  },
 ];
 
 const router = createRouter({

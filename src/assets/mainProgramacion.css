@@ -25,6 +25,16 @@
   src: url("../assets/fonts/Mona-Sans-BoldWide.ttf") format("truetype");
   font-display: swap;
 }
+@font-face {
+  font-family: "Mona Sans ExtraBold Wide";
+  src: url("../assets/fonts/Mona-Sans-ExtraBoldWide.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mona Sans Medium Wide";
+  src: url("../assets/fonts/Mona-Sans-MediumWide.ttf") format("truetype");
+  font-display: swap;
+}
 .font-regular {
   font-family: "Mona Sans Regular";
 }
